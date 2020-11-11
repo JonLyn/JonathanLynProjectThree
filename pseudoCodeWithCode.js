@@ -9,6 +9,7 @@
 for (let i = 0; i < 16; i++) {
     $('.piecesContainer').append(`<div class='piece jigsaw${i}'></div>`);
 }
+console.log($('.piece'));
 
 // Create piece slots
 for (let i = 0; i < 16; i++) {
@@ -17,7 +18,46 @@ for (let i = 0; i < 16; i++) {
 
 // Shuffle puzzle pieces in the piece container using a randomizer
 // Get random x and y positioning 
+const randomX = (Math.floor(Math.random() * 150));
+
+const randomY = (Math.floor(Math.random() * 400));
+
+// Apply a unique ID/index to each puzzle piece
+const piece = document.getElementsByClassName('piece');
+const piecesArray = Array.from(piece);
+
+console.log(piece);
+
+// piecesArray.forEach(element => {
+
+    // let baseOffset = piecesArray.offsetParent().offset();
+
+    // piecesArray.offset({
+    //      left: baseOffset.left + randomX,
+    //      top: baseOffset.top + randomY
+    //  })
+// });
+
+for (let i = 0; i < 16; i++) {
+    const randomX = (Math.floor(Math.random() * 50));
+
+    const randomY = (Math.floor(Math.random() * 300));
+
+    $(piecesArray[i]).css({
+        left: randomX + 'px',
+        top: randomY + 'px'
+    })
+}    
+
+
+// Apply a unique ID/index to each puzzle slot
+const slot = document.getElementsByClassName('pieceSlot')
+const slotArray = Array.from(slot);
+
+
+
 // Apply random positioning to each piece 
+
 
 
 // Add draggable state to puzzle pieces so they can be dragged and snap to puzzle slots
@@ -25,20 +65,14 @@ $('.piece').draggable({
     snap: '.pieceSlot',
     containment: '.wrapper',
     snapTolerance: 50,
-    zIndex: 100
+    zIndex: 100,
+    snapMode: 'inner'
 });
 
-// Apply a unique ID/index to each puzzle piece
-const piece = document.getElementsByClassName('piece');
-const piecesArray = Array.from(piece);
-
-// Apply a unique ID/index to each puzzle slot
-const slot = document.getElementsByClassName('pieceSlot')
-const slotArray = Array.from(slot);
 
 // Add droppable state to puzlze slots so they can accept correct puzzle piece
 let correctCount = 0;
-for (let i = 0; i <= 16; i++) {
+for (let i = 0; i < 16; i++) {
     $(slotArray[i]).droppable({
         accept: $(piecesArray[i]),
         drop: $(slotArray[i]).on('drop', function (event, ui) {
@@ -48,6 +82,10 @@ for (let i = 0; i <= 16; i++) {
             if (correctCount === 16) {
                 alert('you win!');
             }
+            // change this to addClass
+            $(piecesArray[i]).css({
+                display: 'none'
+            })
             console.log(correctCount);
         })
     })

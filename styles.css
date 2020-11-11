@@ -50,6 +50,7 @@ h1 {
     width: 150px;
     min-width: 150px;
     height: 400px;
+    position: relative;
 }
 
 .piece, 
@@ -62,16 +63,16 @@ h1 {
 
 .piece {
     position: absolute;
-    background-image: url('./toughPuzzleOne\ \(2\).jpg');
+    background-image: url('./assets/toughPuzzleOne.jpg');
 }
 
 /* .pieceSlot */
 
-.a1 {
+.jigsaw16 {
     border: 3px solid red;
 }
 
-.a2 {
+.jigsaw15 {
     border: 3px solid blue;
 }
 
