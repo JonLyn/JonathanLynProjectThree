@@ -26,18 +26,31 @@ h1 {
 
 .wrapper {
     display: flex;
-    justify-content: center;
-    width: 600px;
+    justify-content: space-evenly;
+    width: 80vw;
     margin: 0 auto;
 }
 
+.piecesBoundary {
+    display: flex;
+}
+
 .piecesContainer,
-.puzzleContainer {
+.puzzleContainer,
+.totalMovesCounter {
         background-color: cornsilk;
-        /* margin: 20px; */
         display: flex;
         flex-wrap: wrap;
     }
+
+.totalMovesCounter {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    
+}
 
 .puzzleContainer {
     width: 450px;
@@ -83,7 +96,7 @@ h1 {
 .jigsaw14,
 .jigsaw15 {
     background-repeat: no-repeat;
-    z-index: 100;
+    /* z-index: 100; */
 }
 
 .jigsaw0 {
@@ -152,7 +165,7 @@ h1 {
 }
 
 .zIndexLower {
-    z-index: 1;
+    z-index: 0;
 }
 
 
