@@ -36,24 +36,16 @@ const shufflePieces = function() {
     for (let i = 0; i < 16; i++) {
         const randomX = (Math.floor(Math.random() * 50));
         const randomY = (Math.floor(Math.random() * 300));
-        const randomZ = (Math.floor(Math.random() * 1000) + 1);
-        console.log(randomZ);
+        // const randomZ = (Math.floor(Math.random() * 1000) + 1);
         $(piecesArray[i]).css({
             'left': randomX + 'px',
-            'top': randomY + 'px',
-            'z-index': randomZ
+            'top': randomY + 'px', 
+            // 'z-index': randomZ
         })
     } 
 }   
 shufflePieces();
-// TEST CODE TO CHANGE FROM ABOVE INLINE SYTLES
-// piecesArray.forEach(element => {
-    // let baseOffset = piecesArray.offsetParent().offset();
-    // piecesArray.offset({
-    //      left: baseOffset.left + randomX,
-    //      top: baseOffset.top + randomY
-    //  })
-// });
+
 
 
 // Assign draggable state and options to puzzle pieces so they can be dragged and snap to puzzle slots
@@ -119,3 +111,11 @@ $('button').on('click', function() {
 })
 
 
+// TEST CODE TO CHANGE FROM ABOVE INLINE SYTLES
+// piecesArray.forEach(element => {
+    // let baseOffset = piecesArray.offsetParent().offset();
+    // piecesArray.offset({
+    //      left: baseOffset.left + randomX,
+    //      top: baseOffset.top + randomY
+    //  })
+// });

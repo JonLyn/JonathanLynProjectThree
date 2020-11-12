@@ -96,76 +96,80 @@ h1 {
 .jigsaw14,
 .jigsaw15 {
     background-repeat: no-repeat;
-    /* z-index: 100; */
+    z-index: 100;
 }
 
 .jigsaw0 {
     background-position: 0 0;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
 }
 .jigsaw1 {
     background-position: -100px 0;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
 }
 .jigsaw2 {
     background-position: -200px 0;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
 }
 .jigsaw3 {
     background-position: -300px 0;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
 }
 .jigsaw4 {
     background-position: 0 -100px;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 }
 .jigsaw5 {
     background-position: -100px -100px;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 }
 .jigsaw6 {
     background-position: -200px -100px;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 }
 .jigsaw7 {
     background-position: -300px -100px;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 }
 .jigsaw8 {
     background-position: 0 -200px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 .jigsaw9 {
     background-position: -100px -200px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 .jigsaw10 {
     background-position: -200px -200px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 .jigsaw11 {
     background-position: -300px -200px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 .jigsaw12 {
     background-position: 0 -300px;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 }
 .jigsaw13 {
     background-position: -100px -300px;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 }
 .jigsaw14 {
     background-position: -200px -300px;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 }
 .jigsaw15 {
     background-position: -300px -300px;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 }
 
 .zIndexLower {
     z-index: 0;
+}
+
+button {
+    margin-top: 50px;
 }
 
 
