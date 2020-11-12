@@ -66,13 +66,101 @@ h1 {
     background-image: url('./assets/toughPuzzleOne.jpg');
 }
 
-/* .pieceSlot */
-
-.jigsaw16 {
-    border: 3px solid red;
-}
-
+.jigsaw0,
+.jigsaw1,
+.jigsaw2,
+.jigsaw3,
+.jigsaw4,
+.jigsaw5,
+.jigsaw6,
+.jigsaw7,
+.jigsaw8,
+.jigsaw9,
+.jigsaw10,
+.jigsaw11,
+.jigsaw12,
+.jigsaw13,
+.jigsaw14,
 .jigsaw15 {
-    border: 3px solid blue;
+    background-repeat: no-repeat;
+    z-index: 100;
 }
+
+.jigsaw0 {
+    background-position: 0 0;
+    border: 1px solid yellow;
+}
+.jigsaw1 {
+    background-position: -100px 0;
+    border: 1px solid yellow;
+}
+.jigsaw2 {
+    background-position: -200px 0;
+    border: 1px solid yellow;
+}
+.jigsaw3 {
+    background-position: -300px 0;
+    border: 1px solid yellow;
+}
+.jigsaw4 {
+    background-position: 0 -100px;
+    border: 2px solid green;
+}
+.jigsaw5 {
+    background-position: -100px -100px;
+    border: 2px solid green;
+}
+.jigsaw6 {
+    background-position: -200px -100px;
+    border: 2px solid green;
+}
+.jigsaw7 {
+    background-position: -300px -100px;
+    border: 2px solid green;
+}
+.jigsaw8 {
+    background-position: 0 -200px;
+    border: 2px solid red;
+}
+.jigsaw9 {
+    background-position: -100px -200px;
+    border: 2px solid red;
+}
+.jigsaw10 {
+    background-position: -200px -200px;
+    border: 2px solid red;
+}
+.jigsaw11 {
+    background-position: -300px -200px;
+    border: 2px solid red;
+}
+.jigsaw12 {
+    background-position: 0 -300px;
+    border: 2px solid blue;
+}
+.jigsaw13 {
+    background-position: -100px -300px;
+    border: 2px solid blue;
+}
+.jigsaw14 {
+    background-position: -200px -300px;
+    border: 2px solid blue;
+}
+.jigsaw15 {
+    background-position: -300px -300px;
+    border: 2px solid blue;
+}
+
+.zIndexLower {
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
 
