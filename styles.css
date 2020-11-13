@@ -91,7 +91,7 @@ a:hover {
 
 .piece {
     position: absolute;
-    background-image: url('./assets/toughPuzzleThree.jpg');
+    background-image: url('./assets/toughPuzzleFour.jpg');
     background-repeat: no-repeat;
     z-index: 100;
 }

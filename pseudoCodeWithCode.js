@@ -29,17 +29,19 @@ const slotArray = Array.from(slot);
 
 
 // Apply random start(x & y) positioning and positive z-index to each piece using for loop and shuffle pieces
-const shufflePieces = function() {
-    piecesArray.forEach((eachPiece) => {
-        const randomX = (Math.floor(Math.random() * 50));
-        const randomY = (Math.floor(Math.random() * 300));
-        $(eachPiece).css({
-            'left': `${randomX}px`,
-            'top': `${randomY}px`
-        })
-    })
-}   
-shufflePieces();
+// const shufflePieces = function() {
+//     piecesArray.forEach((eachPiece) => {
+//         const randomX = (Math.floor(Math.random() * 50));
+//         const randomY = (Math.floor(Math.random() * 300));
+//         $(eachPiece).css({
+//             'left': `${randomX}px`,
+//             'top': `${randomY}px`
+//         })
+//     })
+//     movesRemainCount = 40;
+//     correctCount = 0;
+// }   
+// shufflePieces();
 
 
 // Assign draggable state and options to puzzle pieces so they can be dragged and snap to puzzle slots
@@ -50,10 +52,13 @@ $('.piece').draggable({
     containment: '.piecesBoundary',
 });
 
-
+const hardMode = 20;
 // Create counter variable and function to keep track of the number to total moves remaining
-let movesRemainCount = 100;
+let movesRemainCount = hardMode;
 const movesRemainCounterFunk = () => {
+    // console.log('asdffsd');
+    // movesRemainCount = 10;
+    
     if (movesRemainCount < 0) {
         $('.counter').html('No moves left');
         // Notify player game is over if they have reached total moves allowed
@@ -61,7 +66,7 @@ const movesRemainCounterFunk = () => {
         // reshuffle pieces using shuffle function
         shufflePieces();
         // Reset move counter and display on screen
-        movesRemainCount = 10;
+        movesRemainCount = hardMode;
         $('.counter').html(movesRemainCount);
     }
 }
@@ -70,6 +75,7 @@ const movesRemainCounterFunk = () => {
 // Create counter variable and function to keep track of the number of correctly placed pieces 
 let correctCount = 0;
 const correctCountFunk = () => {
+    // correctCount = 0;
     if (correctCount === 5) {
         // Notify player they have won if they have placed all pieces successfully
         alert('you win!');
@@ -81,6 +87,26 @@ const correctCountFunk = () => {
         correctCount = 0;
     }
 }
+
+// Apply random start(x & y) positioning and positive z-index to each piece using for loop and shuffle pieces
+const shufflePieces = function () {
+    piecesArray.forEach((eachPiece) => {
+        const randomX = (Math.floor(Math.random() * 50));
+        const randomY = (Math.floor(Math.random() * 300));
+        $(eachPiece).css({
+            'left': `${randomX}px`,
+            'top': `${randomY}px`
+        })
+        
+    })
+    // movesRemainCounterFunk();
+    // correctCountFunk();
+    movesRemainCount = hardMode;
+    $('.counter').html(hardMode);
+    correctCount = 0;
+}
+shufflePieces();
+
 
 
 // Apply droppable state to total playing are to track each player move and add 1 total move to move counter 
