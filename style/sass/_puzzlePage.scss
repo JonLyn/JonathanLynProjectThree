@@ -1,34 +1,60 @@
 body {
-    background-color: black;
+    background-color: $primary;
 }
 
+// create mixin and move to typography
 h1 {
-    color: white;
+    color: $secondary;
     text-align: center;
+    font-size: 8rem;
+    border: 10px solid $bronze;
+    border-radius: 20px;
+    padding: 10px 30px;
 }
 
-.wrapper {
-    display: flex;
-    justify-content: space-evenly;
-    width: 80vw;
-    margin: 0 auto;
-}
-
+.movesLeft,
 .piecesBoundary {
     display: flex;
+    border: 20px solid $secondary;
+    border-radius: 15px;
+    background-color: $secondary;
+    z-index: 10;
+    position: relative;
+}
+
+.movesLeft::before {
+    content: '';
+    position: absolute;
+    border: 8px solid $bronze;
+    border-radius: 23px;
+    top: -28px;
+    right: -28px;
+    bottom: -28px;
+    left: -28px;
+}
+
+.piecesBoundary::before {
+    content: '';
+    position: absolute;
+    top: -28px;
+    right: -28px;
+    bottom: -28px;
+    left: -28px;
+    border: 8px solid $bronze;
+    border-radius: 23px;
 }
 
 .piecesContainer,
-.puzzleContainer,
-.movesLeft {
-        background-color: lightslategray;
+.puzzleContainer {
+        background-color: #08415C;
         display: flex;
         flex-wrap: wrap;
     }
 
 .movesLeft {
-    margin-right: 50px;
+    margin-right: 60px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     /* width: 200px; */
@@ -37,11 +63,15 @@ h1 {
     text-align: center;
 }
 
+.counter {
+    font-size: 7rem;
+}
+
 .puzzleContainer {
     width: 450px;
     min-width: 400px;
     height: 400px;
-    border-left: 50px solid black;
+    border-left: 50px solid $secondary;
 }
 
 .piecesContainer {
@@ -49,9 +79,10 @@ h1 {
     min-width: 150px;
     height: 400px;
     position: relative;
+    border-radius: 12px;;
 }
 
-.piece, 
+// .piece, 
 .pieceSlot {
     flex-basis: 100px;
     min-width: 100px;
@@ -64,13 +95,13 @@ a {
     min-width: 100px;
     height: 100px;
     min-height: 100px;
-    display: inline-block;
+    display: block;
+        &:hover,
+        &:focus {
+            border: 2px solid red;
+        }
 }
 
-a:focus,
-a:hover {
-    border: 2px solid red;
-}
 
 .piece {
     position: absolute;

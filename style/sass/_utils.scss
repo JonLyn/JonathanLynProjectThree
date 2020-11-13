@@ -1,0 +1,36 @@
+// Colour palette
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #fff8f0ff, #9e2b25ff, #011638ff, #087ca7ff, #d58936ff);
+$gradient-right: linear-gradient(90deg, #fff8f0ff, #9e2b25ff, #011638ff, #087ca7ff, #d58936ff);
+$gradient-bottom: linear-gradient(180deg, #fff8f0ff, #9e2b25ff, #011638ff, #087ca7ff, #d58936ff);
+$gradient-left: linear-gradient(270deg, #fff8f0ff, #9e2b25ff, #011638ff, #087ca7ff, #d58936ff);
+$gradient-top-right: linear-gradient(45deg, #fff8f0ff, #9e2b25ff, #011638ff, #087ca7ff, #d58936ff);
+$gradient-bottom-right: linear-gradient(135deg, #fff8f0ff, #9e2b25ff, #011638ff, #087ca7ff, #d58936ff);
+$gradient-top-left: linear-gradient(225deg, #fff8f0ff, #9e2b25ff, #011638ff, #087ca7ff, #d58936ff);
+$gradient-bottom-left: linear-gradient(315deg, #fff8f0ff, #9e2b25ff, #011638ff, #087ca7ff, #d58936ff);
+$gradient-radial: radial-gradient(#fff8f0ff, #9e2b25ff, #011638ff, #087ca7ff, #d58936ff);
+
+
+$primary:  rgba(1, 22, 56, 1);
+$secondary: rgba(255, 248, 240, 1);
+$accent: rgba(158, 43, 37, 1);
+$roman-silver: rgba(125, 132, 145, 1);
+$bronze: rgba(213, 137, 54, 1);
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+* {
+    margin: 0;
+    border: 0;
+    border: none;
+    text-decoration: none;
+}
+
+
