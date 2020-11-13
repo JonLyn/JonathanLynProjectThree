@@ -37,19 +37,21 @@ h1 {
 
 .piecesContainer,
 .puzzleContainer,
-.totalMovesCounter {
-        background-color: cornsilk;
+.movesLeft {
+        background-color: lightslategray;
         display: flex;
         flex-wrap: wrap;
     }
 
-.totalMovesCounter {
+.movesLeft {
     margin-right: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* width: 200px; */
     height: 100%;
-    
+    padding: 5px;
+    text-align: center;
 }
 
 .puzzleContainer {
@@ -75,8 +77,8 @@ h1 {
 }
 
 a {
-    width: 98px;
-    min-width: 98px;
+    width: 100px;
+    min-width: 100px;
     height: 100px;
     min-height: 100px;
     display: inline-block;
@@ -89,25 +91,7 @@ a:hover {
 
 .piece {
     position: absolute;
-    background-image: url('./assets/toughPuzzleOne.jpg');
-}
-
-.jigsaw0,
-.jigsaw1,
-.jigsaw2,
-.jigsaw3,
-.jigsaw4,
-.jigsaw5,
-.jigsaw6,
-.jigsaw7,
-.jigsaw8,
-.jigsaw9,
-.jigsaw10,
-.jigsaw11,
-.jigsaw12,
-.jigsaw13,
-.jigsaw14,
-.jigsaw15 {
+    background-image: url('./assets/toughPuzzleThree.jpg');
     background-repeat: no-repeat;
     z-index: 100;
 }

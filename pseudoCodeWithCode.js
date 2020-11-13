@@ -20,6 +20,7 @@ for (let i = 0; i < 16; i++) {
 // Insert puzzle pieces into an array to assign index numbers to each piece
 const piece = document.getElementsByClassName('piece');
 const piecesArray = Array.from(piece);
+console.log(piecesArray);
 
 
 // Insert piece slots into an array to assign index numbers to each slot
@@ -41,7 +42,6 @@ const shufflePieces = function() {
 shufflePieces();
 
 
-
 // Assign draggable state and options to puzzle pieces so they can be dragged and snap to puzzle slots
 $('.piece').draggable({
     snap: '.pieceSlot',
@@ -50,36 +50,51 @@ $('.piece').draggable({
     containment: '.piecesBoundary',
 });
 
+
+// Create counter variable and function to keep track of the number to total moves remaining
+let movesRemainCount = 100;
+const movesRemainCounterFunk = () => {
+    if (movesRemainCount < 0) {
+        $('.counter').html('No moves left');
+        // Notify player game is over if they have reached total moves allowed
+        alert('you lose!');
+        // reshuffle pieces using shuffle function
+        shufflePieces();
+        // Reset move counter and display on screen
+        movesRemainCount = 10;
+        $('.counter').html(movesRemainCount);
+    }
+}
+
+
 // Create counter variable and function to keep track of the number of correctly placed pieces 
 let correctCount = 0;
-const correctCountFunc = () => {
-    if (correctCount === 16) {
+const correctCountFunk = () => {
+    if (correctCount === 5) {
         // Notify player they have won if they have placed all pieces successfully
         alert('you win!');
         // reshuffle pieces using shuffle function
         shufflePieces();
+        // Re-enable draggable state to pieces
+        $(piece).draggable('enable');
         // Reset correct moves counter
         correctCount = 0;
     }
 }
 
 
-// Create counter variable and function to keep track of the number to total moves
-let moveCount = 0;
-const moveCounterFunc = () => {
-    if (moveCount === 5) {
-        // Notify player game is over if they have reached total moves allowed
-        alert('you lose!');
-        // reshuffle pieces using shuffle function
-        shufflePieces();
-        // Reset move counter and display on screen
-        moveCount = 0;
-        $('.counter').html(moveCount);
+// Apply droppable state to total playing are to track each player move and add 1 total move to move counter 
+$('.puzzleContainer').droppable({
+    accept: $('.piece'),
+    drop: function (event, ui) {
+        movesRemainCount -= 1;
+        // Display total moves counter on screen
+        $('.counter').html(movesRemainCount);
+        // Call total moves count checker function to see if any moves remaining or if game is over
+        movesRemainCounterFunk();
     }
-}
+})
 
-// Create a counter to keep track of moves remaining
-let movesRemainingCount = 30;
 
 // Create loop to assign droppable state to each puzzle slot and allow only the puzzle pice with the same array index number
 for (let i = 0; i < 16; i++) {
@@ -92,28 +107,16 @@ for (let i = 0; i < 16; i++) {
             $(piecesArray[i]).draggable('disable').addClass('zIndexLower');
             // Increase correct move counter by 1
             correctCount += 1;
-            // Alert player that they have won once all 16 pieces have been correctly placed
-            
+            console.log(correctCount);
+            // Call correct move count checker function to see if all pieces have been correctly placed
+            correctCountFunk();
         })
     })
 }
 
 
-// Apply droppable state to total playing are to track each player move and add 1 total move to move counter 
-$('.puzzleContainer').droppable({
-    accept: $('.piece'),
-    drop: function (event, ui) {
-        moveCount += 1;
-        // Display total move counter on screen
-        $('.counter').html(moveCount);
-        // Call move count checker function
-        moveCounterFunc();
-    }
-})
-
 // Display total move counter on screen
-$('.counter').html(`${moveCount}`);
-
+$('.counter').html(`${movesRemainCount}`);
 
 
 // 'Reset' button to reshuffle pieces and start puzzle over again
