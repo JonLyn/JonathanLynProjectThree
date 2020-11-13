@@ -74,6 +74,19 @@ h1 {
     border: 1px solid black;
 }
 
+a {
+    width: 98px;
+    min-width: 98px;
+    height: 100px;
+    min-height: 100px;
+    display: inline-block;
+}
+
+a:focus,
+a:hover {
+    border: 2px solid red;
+}
+
 .piece {
     position: absolute;
     background-image: url('./assets/toughPuzzleOne.jpg');

@@ -6,19 +6,15 @@
 // A landing page introducing the game and rules
 // Point users to click link to go to game page
 
-// Create puzzle pieces as <div>s in HTML
+// Create puzzle pieces as <div>s holding an anchor tag to allow focus state in HTML
 for (let i = 0; i < 16; i++) {
-    $('.piecesContainer').append(`<div class='piece jigsaw${i}'></div>`);
+    $('.piecesContainer').append(`<div class='piece jigsaw${i}'>
+    <a href="#"></a></div>`);
 }
 // Create piece slots as <div>s in HTML
 for (let i = 0; i < 16; i++) {
     $('.puzzleContainer').append(`<div class='pieceSlot slot${i}'></div>`);
 }
-
-
-// Get random x and y positioning 
-const randomX = (Math.floor(Math.random() * 150));
-const randomY = (Math.floor(Math.random() * 400));
 
 
 // Insert puzzle pieces into an array to assign index numbers to each piece
@@ -31,18 +27,16 @@ const slot = document.getElementsByClassName('pieceSlot')
 const slotArray = Array.from(slot);
 
 
-// Apply random start positioning and positive z-index to each piece using for loop and shuffle pieces
+// Apply random start(x & y) positioning and positive z-index to each piece using for loop and shuffle pieces
 const shufflePieces = function() {
-    for (let i = 0; i < 16; i++) {
+    piecesArray.forEach((eachPiece) => {
         const randomX = (Math.floor(Math.random() * 50));
         const randomY = (Math.floor(Math.random() * 300));
-        // const randomZ = (Math.floor(Math.random() * 1000) + 1);
-        $(piecesArray[i]).css({
-            'left': randomX + 'px',
-            'top': randomY + 'px', 
-            // 'z-index': randomZ
+        $(eachPiece).css({
+            'left': `${randomX}px`,
+            'top': `${randomY}px`
         })
-    } 
+    })
 }   
 shufflePieces();
 
@@ -56,12 +50,36 @@ $('.piece').draggable({
     containment: '.piecesBoundary',
 });
 
-// Create counter to keep track of the number of correctly placed pieces 
+// Create counter variable and function to keep track of the number of correctly placed pieces 
 let correctCount = 0;
+const correctCountFunc = () => {
+    if (correctCount === 16) {
+        // Notify player they have won if they have placed all pieces successfully
+        alert('you win!');
+        // reshuffle pieces using shuffle function
+        shufflePieces();
+        // Reset correct moves counter
+        correctCount = 0;
+    }
+}
 
-// Create counter to keep track of the number to total moves
+
+// Create counter variable and function to keep track of the number to total moves
 let moveCount = 0;
-// *****MAYBE USE MOVE COUNT minus CORRECT COUNT TO COUNT LIVES
+const moveCounterFunc = () => {
+    if (moveCount === 5) {
+        // Notify player game is over if they have reached total moves allowed
+        alert('you lose!');
+        // reshuffle pieces using shuffle function
+        shufflePieces();
+        // Reset move counter and display on screen
+        moveCount = 0;
+        $('.counter').html(moveCount);
+    }
+}
+
+// Create a counter to keep track of moves remaining
+let movesRemainingCount = 30;
 
 // Create loop to assign droppable state to each puzzle slot and allow only the puzzle pice with the same array index number
 for (let i = 0; i < 16; i++) {
@@ -75,11 +93,7 @@ for (let i = 0; i < 16; i++) {
             // Increase correct move counter by 1
             correctCount += 1;
             // Alert player that they have won once all 16 pieces have been correctly placed
-            if (correctCount === 16) {
-                alert('you win!');
-            }
-            // console.log('move');
-            // console.log(correctCount);
+            
         })
     })
 }
@@ -92,11 +106,8 @@ $('.puzzleContainer').droppable({
         moveCount += 1;
         // Display total move counter on screen
         $('.counter').html(moveCount);
-        // Alert player they have lost if they have used all moves allowed
-        if (moveCount === 25) {
-            alert('you lose!');
-        }
-        // console.log(moveCount);
+        // Call move count checker function
+        moveCounterFunc();
     }
 })
 
