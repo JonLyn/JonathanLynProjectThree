@@ -3,7 +3,7 @@
 // Impuzzible
 // A landing page introducing the game and rules
 // Point users to click link to go to game page
-
+const app = {};
 
 // Create puzzle pieces as <div>s holding an anchor tag to allow focus state in HTML
 for (let i = 0; i < 16; i++) {
@@ -25,7 +25,6 @@ const slot = document.getElementsByClassName('pieceSlot')
 const slotArray = Array.from(slot);
 
 // Assign draggable state and options to puzzle pieces so they can be dragged and snap to puzzle slots
-
 const draggablePiece = $('.piece').draggable({
     snap: '.pieceSlot',
     snapMode: 'inner',
@@ -37,13 +36,45 @@ const draggablePiece = $('.piece').draggable({
 
 
 
+
+
+
+
+
+
+
+
+
+
+// Apply droppable state to total playing are to track each player move and add 1 total move to move counter 
+const totalDroppableArea = () => {
+    $('.puzzleContainer').droppable({
+        accept: $('.piece'),
+        drop: function (event, ui) {
+            movesRemainCount -= 1;
+            // Display total moves counter on screen
+            $('.counter').html(movesRemainCount);
+            // Call total moves count checker function to see if any moves remaining or if game is over
+            movesRemainCounterFunk();
+        }
+    })
+} 
+
+// Create loop to assign droppable state to each puzzle slot and allow only the puzzle pice with the same array index number
+const assignDroppableSlot = () => {
+    for (let i = 0; i < 16; i++) {
+        $(slotArray[i]).droppable({
+            accept: $(piecesArray[i]),
+            drop: correctDropEvent(i),
+        })
+    }
+} 
+
+// Create difficulty level
 const hardMode = 20;
 // Create counter variable and function to keep track of the number to total moves remaining
 let movesRemainCount = hardMode;
-const movesRemainCounterFunk = () => {
-    // console.log('asdffsd');
-    // movesRemainCount = 10;
-    
+const movesRemainCounterFunk = () => {   
     if (movesRemainCount < 0) {
         $('.counter').html('No moves left');
         // Notify player game is over if they have reached total moves allowed
@@ -55,7 +86,6 @@ const movesRemainCounterFunk = () => {
         $('.counter').html(movesRemainCount);
     }
 }
-
 
 // Create counter variable and function to keep track of the number of correctly placed pieces 
 let correctCount = 0;
@@ -84,49 +114,30 @@ const shufflePieces = function () {
         })
         
     })
-    // movesRemainCounterFunk();
-    // correctCountFunk();
     movesRemainCount = hardMode;
     $('.counter').html(hardMode);
     correctCount = 0;
 }
-shufflePieces();
 
-
-
-// Apply droppable state to total playing are to track each player move and add 1 total move to move counter 
-$('.puzzleContainer').droppable({
-    accept: $('.piece'),
-    drop: function (event, ui) {
-        movesRemainCount -= 1;
-        // Display total moves counter on screen
-        $('.counter').html(movesRemainCount);
-        // Call total moves count checker function to see if any moves remaining or if game is over
-        movesRemainCounterFunk();
-    }
-})
-
-
-
-
-
-// Create loop to assign droppable state to each puzzle slot and allow only the puzzle pice with the same array index number
-for (let i = 0; i < 16; i++) {
-    $(slotArray[i]).droppable({
-        accept: $(piecesArray[i]),
-        // ***** maybe can remove the on method
-        drop: $(slotArray[i]).on('drop', function (event, ui) {
-            console.log('correct');
-            // Disable dragging the puzzle piece once it has been dropped on the correct slot and lower z-index in case another piece is placed on top
-            $(piecesArray[i]).draggable('disable').addClass('zIndexLower');
-            // Increase correct move counter by 1
-            correctCount += 1;
-            console.log(correctCount);
-            // Call correct move count checker function to see if all pieces have been correctly placed
-            correctCountFunk();
-        })
+const correctDropEvent = (correctPiece) => {
+    $(slotArray[correctPiece]).on('drop', function (event, ui) {
+        console.log('correct');
+        // Disable dragging the puzzle piece once it has been dropped on the correct slot and lower z-index in case another piece is placed on top
+        $(piecesArray[correctPiece]).draggable('disable').addClass('zIndexLower');
+        // Increase correct move counter by 1
+        correctCount += 1;
+        console.log(correctCount);
+        // Call correct move count checker function to see if all pieces have been correctly placed
+        correctCountFunk();
     })
 }
+
+shufflePieces();
+totalDroppableArea();
+assignDroppableSlot();
+
+
+
 
 
 // Display total move counter on screen
@@ -139,19 +150,18 @@ $('button').on('click', function() {
 })
 
 for(let i=0; i<16; i++) {
-
     $(piecesArray[i]).on('keydown', handleKeys);
-
     function handleKeys(e) {
         // Don't scroll page
         e.preventDefault();
-        var position,
-            draggable = $(piecesArray[i]),
+        let position = '';
+        const draggable = $(piecesArray[i]),
             container = $('.piecesBoundary'),
             distance = 5; // Distance in pixels the draggable should be moved
 
         position = draggable.position();
         console.log('piece was selected with the key');
+
 
         // Reposition if one of the directional keys is pressed
         switch (e.keyCode) {
@@ -159,9 +169,10 @@ for(let i=0; i<16; i++) {
             case 38: position.top -= distance; break; // Up
             case 39: position.left += distance; break; // Right
             case 40: position.top += distance; break; // Down
-            case 13: $(piecesArray[i]).draggable('disable'); 
-            console.log('release');
-            break;
+            case 13: correctDropEvent(i);
+
+          
+            console.log('release'); break;
             case 9: let next = i++;
             if (next > piecesArray.length) {
                 next = 0;
@@ -178,7 +189,10 @@ for(let i=0; i<16; i++) {
             position.top + draggable.height() <= container.height()) {
             draggable.css(position);
         }
+        
+
     }
+
 }
     
 
