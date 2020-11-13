@@ -20,7 +20,7 @@ for (let i = 0; i < 16; i++) {
 // Insert puzzle pieces into an array to assign index numbers to each piece
 const piece = document.getElementsByClassName('piece');
 const piecesArray = Array.from(piece);
-console.log(piecesArray);
+// console.log(piecesArray);
 
 
 // Insert piece slots into an array to assign index numbers to each slot
