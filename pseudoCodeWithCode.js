@@ -1,10 +1,9 @@
 // ***** Clean code - put functions in variables and have each function only serve 1 main purpose
 
-
 // Impuzzible
-
 // A landing page introducing the game and rules
 // Point users to click link to go to game page
+
 
 // Create puzzle pieces as <div>s holding an anchor tag to allow focus state in HTML
 for (let i = 0; i < 16; i++) {
@@ -16,41 +15,27 @@ for (let i = 0; i < 16; i++) {
     $('.puzzleContainer').append(`<div class='pieceSlot slot${i}'></div>`);
 }
 
-
 // Insert puzzle pieces into an array to assign index numbers to each piece
 const piece = document.getElementsByClassName('piece');
 const piecesArray = Array.from(piece);
 // console.log(piecesArray);
 
-
 // Insert piece slots into an array to assign index numbers to each slot
 const slot = document.getElementsByClassName('pieceSlot')
 const slotArray = Array.from(slot);
 
-
-// Apply random start(x & y) positioning and positive z-index to each piece using for loop and shuffle pieces
-// const shufflePieces = function() {
-//     piecesArray.forEach((eachPiece) => {
-//         const randomX = (Math.floor(Math.random() * 50));
-//         const randomY = (Math.floor(Math.random() * 300));
-//         $(eachPiece).css({
-//             'left': `${randomX}px`,
-//             'top': `${randomY}px`
-//         })
-//     })
-//     movesRemainCount = 40;
-//     correctCount = 0;
-// }   
-// shufflePieces();
-
-
 // Assign draggable state and options to puzzle pieces so they can be dragged and snap to puzzle slots
-$('.piece').draggable({
+
+const draggablePiece = $('.piece').draggable({
     snap: '.pieceSlot',
     snapMode: 'inner',
     snapTolerance: 50,
-    containment: '.piecesBoundary',
+    containment: '.piecesBoundary'
 });
+
+
+
+
 
 const hardMode = 20;
 // Create counter variable and function to keep track of the number to total moves remaining
@@ -122,6 +107,9 @@ $('.puzzleContainer').droppable({
 })
 
 
+
+
+
 // Create loop to assign droppable state to each puzzle slot and allow only the puzzle pice with the same array index number
 for (let i = 0; i < 16; i++) {
     $(slotArray[i]).droppable({
@@ -150,6 +138,51 @@ $('button').on('click', function() {
     shufflePieces();
 })
 
+for(let i=0; i<16; i++) {
+
+    $(piecesArray[i]).on('keydown', handleKeys);
+
+    function handleKeys(e) {
+        // Don't scroll page
+        e.preventDefault();
+        var position,
+            draggable = $(piecesArray[i]),
+            container = $('.piecesBoundary'),
+            distance = 5; // Distance in pixels the draggable should be moved
+
+        position = draggable.position();
+        console.log('piece was selected with the key');
+
+        // Reposition if one of the directional keys is pressed
+        switch (e.keyCode) {
+            case 37: position.left -= distance; break; // Left
+            case 38: position.top -= distance; break; // Up
+            case 39: position.left += distance; break; // Right
+            case 40: position.top += distance; break; // Down
+            case 13: $(piecesArray[i]).draggable('disable'); 
+            console.log('release');
+            break;
+            case 9: let next = i++;
+            if (next > piecesArray.length) {
+                next = 0;
+            }
+            
+            $(piecesArray[next]);
+            break;
+            default: return true; // Exit and bubble
+        }
+
+        // Keep draggable within container
+        if (position.left >= 0 && position.top >= 0 &&
+            position.left + draggable.width() <= container.width() &&
+            position.top + draggable.height() <= container.height()) {
+            draggable.css(position);
+        }
+    }
+}
+    
+
+
 
 // TEST CODE TO CHANGE FROM ABOVE INLINE SYTLES
 // piecesArray.forEach(element => {
@@ -159,3 +192,22 @@ $('button').on('click', function() {
     //      top: baseOffset.top + randomY
     //  })
 // });
+
+
+
+
+
+// Apply random start(x & y) positioning and positive z-index to each piece using for loop and shuffle pieces
+// const shufflePieces = function() {
+//     piecesArray.forEach((eachPiece) => {
+//         const randomX = (Math.floor(Math.random() * 50));
+//         const randomY = (Math.floor(Math.random() * 300));
+//         $(eachPiece).css({
+//             'left': `${randomX}px`,
+//             'top': `${randomY}px`
+//         })
+//     })
+//     movesRemainCount = 40;
+//     correctCount = 0;
+// }   
+// shufflePieces();
