@@ -77,7 +77,7 @@ const movesRemainCounterFunk = () => {
 let correctCount = 0;
 const correctCountFunk = () => {
     // correctCount = 0;
-    if (correctCount === 5) {
+    if (correctCount === 16) {
         // Notify player they have won if they have placed all pieces successfully
         alert('you win!');
         // reshuffle pieces using shuffle function
