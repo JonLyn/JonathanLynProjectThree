@@ -138,16 +138,32 @@ const keyboardPress = () => {
 
             // Reposition if one of the directional keys is pressed
             switch (e.keyCode) {
-                case 9: let next = $(piecesArray[i++]);
+                case 9:
+                    let next = $(piecesArray[i++]);
                     if (next > piecesArray.length) {
                         next = 0;
                     }
                     $(piecesArray[next]);
                     break;
-                case 37: position.left -= distance; break; // Left
-                case 38: position.top -= distance; break; // Up
-                case 39: position.left += distance; break; // Right
-                case 40: position.top += distance; break; // Down
+                case 37: 
+                    draggable.css({
+                        border: '3px solid red'
+                    });
+                    position.left -= distance; break; // Left
+                case 38: 
+                    draggable.css({
+                        border: '3px solid red'
+                    });
+                    position.top -= distance; break; // Up
+                case 39: 
+                    draggable.css({
+                        border: '3px solid red'
+                    });
+                    position.left += distance; break; // Right
+                case 40: draggable.css({
+                    border: '3px solid red'
+                });
+                position.top += distance; break; // Down
                 default: return true; // Exit and bubble
             }
 

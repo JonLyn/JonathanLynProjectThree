@@ -10,6 +10,17 @@ body {
     font-size: 1.6rem;
 }
 
+h1 {
+    color: $secondary;
+    width: 600px;
+    text-align: center;
+    font-size: 8rem;
+    border: 10px solid $bronze;
+    border-radius: 20px;
+    // padding: 5px 30px;
+    margin: 10px auto 20px;
+}
+
 h2 {
     font-family: $secondaryFont;
     text-transform: uppercase;
@@ -23,6 +34,11 @@ h2 {
 
 .counter.noMovesLeft {
     font-size: 5rem;
+}
+
+.almostGameOver {
+    font-size: 12rem;
+    color: $accent;
 }
 
 

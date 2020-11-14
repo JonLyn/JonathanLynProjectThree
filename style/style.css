@@ -236,23 +236,27 @@ html {
 }
 
 /* SCSS Gradient */
+*,
+h1 {
+  margin: 0;
+  border: 0;
+  border: none;
+  text-decoration: none;
+}
+
 .wrapper {
+  width: 80vw;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.puzzleAndCounter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 80vw;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-* {
-  margin: 0;
-  border: 0;
-  border: none;
-  text-decoration: none;
 }
 
 html {
@@ -262,6 +266,16 @@ html {
 body {
   font-family: "Permanent Marker", cursive;
   font-size: 1.6rem;
+}
+
+h1 {
+  color: #fff8f0;
+  width: 600px;
+  text-align: center;
+  font-size: 8rem;
+  border: 10px solid #d58936;
+  border-radius: 20px;
+  margin: 10px auto 20px;
 }
 
 h2 {
@@ -279,17 +293,26 @@ h2 {
   font-size: 5rem;
 }
 
+.almostGameOver {
+  font-size: 12rem;
+  color: #9e2b25;
+}
+
 body {
   background-color: #011638;
 }
 
-h1 {
-  color: #fff8f0;
-  text-align: center;
-  font-size: 8rem;
-  border: 10px solid #d58936;
-  border-radius: 20px;
-  padding: 10px 30px;
+.nonPlayableArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .movesLeft,
@@ -305,10 +328,7 @@ h1 {
 }
 
 .movesLeft {
-  margin-right: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin-right: 20px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-orient: vertical;
@@ -318,9 +338,12 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
-  padding: 5px;
+  height: 250px;
+  width: 200px;
   text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .movesLeft::before {
@@ -497,14 +520,14 @@ a:hover, a:focus {
 }
 
 button {
-  margin-top: 50px;
   background-color: #d58936;
   color: #011638;
-  width: 200px;
+  width: 175px;
   height: 50px;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   border-radius: 10px;
-  margin-bottom: 50px;
+  margin: 50px 20px 50px 0;
+  border: 3px solid #fff8f0;
 }

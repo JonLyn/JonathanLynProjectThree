@@ -18,19 +18,25 @@ $accent: rgba(158, 43, 37, 1);
 $roman-silver: rgba(125, 132, 145, 1);
 $bronze: rgba(213, 137, 54, 1);
 
-.wrapper {
-    display: flex;
-    justify-content: center;
-    width: 80vw;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-* {
+*,
+h1 {
     margin: 0;
     border: 0;
     border: none;
     text-decoration: none;
 }
+
+.wrapper {
+    width: 80vw;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.puzzleAndCounter {
+    display: flex;
+    justify-content: center;
+}
+
+
 
 
