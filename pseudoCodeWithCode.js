@@ -3,51 +3,59 @@
 // Impuzzible
 // A landing page introducing the game and rules
 // Point users to click link to go to game page
-const app = {};
-
-// Create puzzle pieces as <div>s holding an anchor tag to allow focus state in HTML
-for (let i = 0; i < 16; i++) {
-    $('.piecesContainer').append(`<div class='piece jigsaw${i}'>
-    <a href="#"></a></div>`);
-}
-// Create piece slots as <div>s in HTML
-for (let i = 0; i < 16; i++) {
-    $('.puzzleContainer').append(`<div class='pieceSlot slot${i}'></div>`);
-}
-
 // Insert puzzle pieces into an array to assign index numbers to each piece
+// app.CreatePiecesArray = () => {
 const piece = document.getElementsByClassName('piece');
-const piecesArray = Array.from(piece);
-// console.log(piecesArray);
+// const piecesArray = Array.from(piece);
+console.log(piece);
+const piecesArray = [];
+piecesArray.push(piece);
+// } 
+
+
+
+console.log(piece);
+console.log(piecesArray);
+
 
 // Insert piece slots into an array to assign index numbers to each slot
 const slot = document.getElementsByClassName('pieceSlot')
-const slotArray = Array.from(slot);
+// const slotArray = Array.from(slot);
+const slotArray = [];
+slotArray.push(slot);
+
+console.log(slotArray);
+const app = {};
+
+// Create puzzle pieces as <div>s holding an anchor tag to allow focus state in HTML
+app.createPiece = () => {
+    for (let i = 0; i < 16; i++) {
+        $('.piecesContainer').append(`<div class='piece jigsaw${i}'>
+    <a href="#"></a></div>`);
+    }
+} 
+// Create piece slots as <div>s in HTML
+app.createSlot = () => {
+    for (let i = 0; i < 16; i++) {
+        $('.puzzleContainer').append(`<div class='pieceSlot slot${i}'></div>`);
+    }
+} 
+// *******************************************************************************************
+
 
 // Assign draggable state and options to puzzle pieces so they can be dragged and snap to puzzle slots
-const draggablePiece = $('.piece').draggable({
-    snap: '.pieceSlot',
-    snapMode: 'inner',
-    snapTolerance: 50,
-    containment: '.piecesBoundary'
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.draggablePiece = () => {
+    $('.piece').draggable({
+        snap: '.pieceSlot',
+        snapMode: 'inner',
+        snapTolerance: 50,
+        containment: '.piecesBoundary',
+        draggable: 'enable'
+    });
+}
 
 // Apply droppable state to total playing are to track each player move and add 1 total move to move counter 
-const totalDroppableArea = () => {
+app.totalDroppableArea = () => {
     $('.puzzleContainer').droppable({
         accept: $('.piece'),
         drop: function (event, ui) {
@@ -55,17 +63,17 @@ const totalDroppableArea = () => {
             // Display total moves counter on screen
             $('.counter').html(movesRemainCount);
             // Call total moves count checker function to see if any moves remaining or if game is over
-            movesRemainCounterFunk();
+            app.movesRemainCounterFunk();
         }
     })
 } 
 
 // Create loop to assign droppable state to each puzzle slot and allow only the puzzle pice with the same array index number
-const assignDroppableSlot = () => {
+app.assignDroppableSlot = () => {
     for (let i = 0; i < 16; i++) {
         $(slotArray[i]).droppable({
             accept: $(piecesArray[i]),
-            drop: correctDropEvent(i),
+            drop: app.correctDropEvent(i),
         })
     }
 } 
@@ -74,13 +82,14 @@ const assignDroppableSlot = () => {
 const hardMode = 20;
 // Create counter variable and function to keep track of the number to total moves remaining
 let movesRemainCount = hardMode;
-const movesRemainCounterFunk = () => {   
+
+app.movesRemainCounterFunk = () => {   
     if (movesRemainCount < 0) {
         $('.counter').html('No moves left');
         // Notify player game is over if they have reached total moves allowed
         alert('you lose!');
         // reshuffle pieces using shuffle function
-        shufflePieces();
+        app.shufflePieces();
         // Reset move counter and display on screen
         movesRemainCount = hardMode;
         $('.counter').html(movesRemainCount);
@@ -89,13 +98,14 @@ const movesRemainCounterFunk = () => {
 
 // Create counter variable and function to keep track of the number of correctly placed pieces 
 let correctCount = 0;
-const correctCountFunk = () => {
+
+app.correctCountFunk = () => {
     // correctCount = 0;
     if (correctCount === 5) {
         // Notify player they have won if they have placed all pieces successfully
         alert('you win!');
         // reshuffle pieces using shuffle function
-        shufflePieces();
+        app.shufflePieces();
         // Re-enable draggable state to pieces
         $(piece).draggable('enable');
         // Reset correct moves counter
@@ -104,22 +114,28 @@ const correctCountFunk = () => {
 }
 
 // Apply random start(x & y) positioning and positive z-index to each piece using for loop and shuffle pieces
-const shufflePieces = function () {
-    piecesArray.forEach((eachPiece) => {
+app.shufflePieces = function () {
+    piecesArray.map((eachPiece) => {
+        eachPiece.forEach((piece) => {
+            console.log(piece);
+        } )
+        // console.log(eachPiece);
         const randomX = (Math.floor(Math.random() * 50));
         const randomY = (Math.floor(Math.random() * 300));
-        $(eachPiece).css({
-            'left': `${randomX}px`,
-            'top': `${randomY}px`
-        })
-        
+        // $(eachPiece).css({
+        //     'left': `${randomX}px`,
+        //     'top': `${randomY}px`
+        // })
+        console.log(randomX);
+        console.log(randomY);
+        $(eachPiece).draggable('enable'); 
     })
     movesRemainCount = hardMode;
     $('.counter').html(hardMode);
     correctCount = 0;
 }
 
-const correctDropEvent = (correctPiece) => {
+app.correctDropEvent = (correctPiece) => {
     $(slotArray[correctPiece]).on('drop', function (event, ui) {
         console.log('correct');
         // Disable dragging the puzzle piece once it has been dropped on the correct slot and lower z-index in case another piece is placed on top
@@ -128,15 +144,18 @@ const correctDropEvent = (correctPiece) => {
         correctCount += 1;
         console.log(correctCount);
         // Call correct move count checker function to see if all pieces have been correctly placed
-        correctCountFunk();
+        app.correctCountFunk();
     })
 }
-
-shufflePieces();
-totalDroppableArea();
-assignDroppableSlot();
-
-
+app.createPiece(); //Create individual puzzle pieces
+app.createSlot(); //Create an empty slot for puzzle piece
+app.draggablePiece(); //Add draggable functionality to each piece
+app.shufflePieces(); //Reshuffle pieces and return to random starting position
+app.totalDroppableArea(); // Apply droppable state to total playing to track of each player move and subtract 1 move to the total move counter 
+app.assignDroppableSlot(); // 
+app.movesRemainCounterFunk(); //Checks to see if any moves remaining.  If not, execute shufflePieces function and resets counter
+app.correctDropEvent();
+app.correctCountFunk(); //Checks to see if all correct pieces have been placed.  If so, executes shufflePieces function and resets counter
 
 
 
@@ -146,7 +165,7 @@ $('.counter').html(`${movesRemainCount}`);
 
 // 'Reset' button to reshuffle pieces and start puzzle over again
 $('button').on('click', function() {
-    shufflePieces();
+    app.shufflePieces();
 })
 
 for(let i=0; i<16; i++) {
@@ -169,9 +188,8 @@ for(let i=0; i<16; i++) {
             case 38: position.top -= distance; break; // Up
             case 39: position.left += distance; break; // Right
             case 40: position.top += distance; break; // Down
-            case 13: correctDropEvent(i);
+            case 13: app.correctDropEvent(i);
 
-          
             console.log('release'); break;
             case 9: let next = i++;
             if (next > piecesArray.length) {
@@ -189,11 +207,12 @@ for(let i=0; i<16; i++) {
             position.top + draggable.height() <= container.height()) {
             draggable.css(position);
         }
-        
-
     }
-
 }
+
+// $(function() {
+
+// });
     
 
 

@@ -57,7 +57,6 @@ h1 {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    /* width: 200px; */
     height: 100%;
     padding: 5px;
     text-align: center;
@@ -68,21 +67,20 @@ h1 {
 }
 
 .puzzleContainer {
-    width: 450px;
+    width: 400px;
     min-width: 400px;
     height: 400px;
-    border-left: 50px solid $secondary;
+    margin-left: 15px;
 }
 
 .piecesContainer {
-    width: 150px;
+    width: 170px;
     min-width: 150px;
     height: 400px;
     position: relative;
     border-radius: 12px;;
 }
 
-// .piece, 
 .pieceSlot {
     flex-basis: 100px;
     min-width: 100px;
@@ -101,7 +99,6 @@ a {
             border: 2px solid red;
         }
 }
-
 
 .piece {
     position: absolute;
@@ -181,4 +178,8 @@ a {
 
 button {
     margin-top: 50px;
+}
+
+.border {
+    border: 2px solid red;
 }
