@@ -255,6 +255,30 @@ html {
   text-decoration: none;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: #011638;
+  font-weight: 800;
+}
+
+.counter {
+  font-size: 8rem;
+}
+
+.counter.noMovesLeft {
+  font-size: 5rem;
+}
+
 body {
   background-color: #011638;
 }
@@ -278,6 +302,25 @@ h1 {
   background-color: #fff8f0;
   z-index: 10;
   position: relative;
+}
+
+.movesLeft {
+  margin-right: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  padding: 5px;
+  text-align: center;
 }
 
 .movesLeft::before {
@@ -310,29 +353,7 @@ h1 {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.movesLeft {
-  margin-right: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
-  padding: 5px;
-  text-align: center;
-}
-
-.counter {
-  font-size: 7rem;
+  position: relative;
 }
 
 .puzzleContainer {
@@ -340,6 +361,20 @@ h1 {
   min-width: 400px;
   height: 400px;
   margin-left: 15px;
+}
+
+.imagePreview {
+  content: '';
+  position: absolute;
+  width: 400px;
+  min-width: 400px;
+  height: 400px;
+  z-index: 1000;
+  background-image: url("../assets/toughPuzzleFour.jpg");
+}
+
+.puzzleContainer::before {
+  content: "";
 }
 
 .piecesContainer {
@@ -463,17 +498,13 @@ a:hover, a:focus {
 
 button {
   margin-top: 50px;
-}
-
-.border {
-  border: 2px solid red;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 1.6rem;
+  background-color: #d58936;
+  color: #011638;
+  width: 200px;
+  height: 50px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  border-radius: 10px;
+  margin-bottom: 50px;
 }

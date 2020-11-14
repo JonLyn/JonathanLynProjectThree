@@ -191,7 +191,7 @@ for(let i=0; i<16; i++) {
             case 13: app.correctDropEvent(i);
 
             console.log('release'); break;
-            case 9: let next = i++;
+            case 9: let next = $(piecesArray[i++]);
             if (next > piecesArray.length) {
                 next = 0;
             }

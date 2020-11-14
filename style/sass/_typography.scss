@@ -1,10 +1,32 @@
+$primaryFont: 'Permanent Marker', cursive;
+$secondaryFont: 'Montserrat', sans-serif;
+
 html {
     font-size: 62.5%;
 }
 
 body {
-    font-family: 'Permanent Marker', cursive;
+    font-family: $primaryFont;
     font-size: 1.6rem;
 }
+
+h2 {
+    font-family: $secondaryFont;
+    text-transform: uppercase;
+    color: $primary;
+    font-weight: 800;
+}
+
+.counter {
+    font-size: 8rem;
+}
+
+.counter.noMovesLeft {
+    font-size: 5rem;
+}
+
+
+
+
 
 

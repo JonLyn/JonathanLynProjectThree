@@ -61,7 +61,9 @@ const hardMode = 20;
 // Create counter variable and function to keep track of the number to total moves remaining
 let movesRemainCount = hardMode;
 const movesRemainCounterFunk = () => {
-    if (movesRemainCount < 0) {
+    if (movesRemainCount === 0) {
+        // Decrease counter font and show no moves left
+        $('.counter').toggleClass('noMovesLeft');
         $('.counter').html('No moves left');
         // Notify player game is over if they have reached total moves allowed
         alert('you lose!');
@@ -123,31 +125,29 @@ const keyboardPress = () => {
     for (let i = 0; i < 16; i++) {
         $(piecesArray[i]).on('keydown', handleKeys);
         function handleKeys(e) {
+            // Don't scroll page
             e.preventDefault();
             let position = '';
-            const draggable = $(piecesArray[i]);
-            draggable.css({
-                border: '1px solid red'
-            });
-            draggable.toggleClass('a:hover')
-            const container = $('.piecesBoundary');
-            const distance = 3; // Distance in pixels the draggable should be moved
+            const draggable = $(piecesArray[i]),
+                container = $('.piecesBoundary'),
+                distance = 5; // Distance in pixels the draggable should be moved
 
             position = draggable.position();
             console.log('piece was selected with the key');
 
+
             // Reposition if one of the directional keys is pressed
             switch (e.keyCode) {
-                case 37: position.left -= distance; break; // Left
-                case 38: position.top -= distance; break; // Up
-                case 39: position.left += distance; break; // Right
-                case 40: position.top += distance; break; // Down
-                case 9: let next = i++;
+                case 9: let next = $(piecesArray[i++]);
                     if (next > piecesArray.length) {
                         next = 0;
                     }
                     $(piecesArray[next]);
                     break;
+                case 37: position.left -= distance; break; // Left
+                case 38: position.top -= distance; break; // Up
+                case 39: position.left += distance; break; // Right
+                case 40: position.top += distance; break; // Down
                 default: return true; // Exit and bubble
             }
 
@@ -177,6 +177,64 @@ totalDroppableArea();
 assignDroppableSlot();
 keyboardPress();
 restartButton();
+
+
+
+
+// const keyboardPress = () => {
+//     for (let i = 0; i < 16; i++) {
+//         $(piecesArray[i]).on('keydown', handleKeys);
+//         function handleKeys(e) {
+//             e.preventDefault();
+//             let position = '';
+//             const draggable = $(piecesArray[i]);
+//             // draggable.css({
+//             //     border: '1px solid red'
+//             // });
+
+//             const container = $('.piecesBoundary');
+//             const distance = 3; // Distance in pixels the draggable should be moved
+
+//             position = draggable.position();
+//             console.log('piece was selected with the key');
+
+//             const keyBoundary = (keyIndex) => {
+//                 if (keyindex.left > keyindex.top >= 0 &&
+//                     keyindex.left + draggable.width() <= container.width() &&
+//                     keyindex.top + draggable.height() <= container.height()) {
+//                     draggable.css(keyindex);
+//                 }
+//             };
+
+
+
+//             // Reposition if one of the directional keys is pressed
+//             switch (e.keyCode) {
+//                 case 9: let next = i++;
+//                     console.log(next);
+//                     if (next > 16) {
+//                         next -= 17;
+//                         console.log(next);
+//                     }
+//                     $(piecesArray[next]);
+//                     console.log($(piecesArray[next]));
+//                     break;
+//                 case 37: position.left -= distance; break; // Left
+//                 case 38: position.top -= distance; break; // Up
+//                 case 39: position.left += distance; break; // Right
+//                 case 40: position.top += distance; break; // Down
+//                 default: return true; // Exit and bubble
+//             }
+
+
+
+//             // Keep draggable within container
+//             const keyBoundary = (keyIndex) => {
+
+//             }
+//         }
+//     }
+// }
 
 
 
