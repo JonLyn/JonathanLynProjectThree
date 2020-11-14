@@ -56,14 +56,22 @@ const assignDroppableSlot = () => {
     }
 }
 
+const removeCounterPulse = () => {
+    $('.counter').removeClass('almostGameOver');
+}
+
 // Create difficulty level
 const hardMode = 20;
 // Create counter variable and function to keep track of the number to total moves remaining
 let movesRemainCount = hardMode;
+
 const movesRemainCounterFunk = () => {
-    if (movesRemainCount === 0) {
+    if (movesRemainCount <= 15 && movesRemainCount > 0) {
+        $('.counter').addClass('almostGameOver');
+    } else if (movesRemainCount === 0) {
         // Decrease counter font and show no moves left
         $('.counter').toggleClass('noMovesLeft');
+        removeCounterPulse();
         $('.counter').html('No moves left');
         // Notify player game is over if they have reached total moves allowed
         alert('you lose!');
@@ -74,6 +82,12 @@ const movesRemainCounterFunk = () => {
         $('.counter').html(movesRemainCount);
     }
 }
+
+// const pressureCounter = () => {
+//     if (movesRemainCount <= 15 && movesRemainCount > 0) {
+//         $('.counter').addClass('almostGameOver');
+//     }
+// }
 
 // Create counter variable and function to keep track of the number of correctly placed pieces 
 let correctCount = 0;
@@ -103,6 +117,7 @@ const shufflePieces = function () {
         })
         $(eachPiece).draggable('enable'); 
     })
+    removeCounterPulse();
     movesRemainCount = hardMode;
     $('.counter').html(hardMode);
     correctCount = 0;
@@ -193,6 +208,7 @@ totalDroppableArea();
 assignDroppableSlot();
 keyboardPress();
 restartButton();
+pressureCounter();
 
 
 

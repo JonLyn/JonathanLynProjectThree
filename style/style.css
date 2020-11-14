@@ -266,6 +266,7 @@ html {
 body {
   font-family: "Permanent Marker", cursive;
   font-size: 1.6rem;
+  height: 100vh;
 }
 
 h1 {
@@ -294,8 +295,34 @@ h2 {
 }
 
 .almostGameOver {
-  font-size: 12rem;
+  font-size: 10rem;
   color: #9e2b25;
+  -webkit-animation: pulse .4s infinite ease;
+          animation: pulse .4s infinite ease;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    font-size: 10rem;
+  }
+  50% {
+    font-size: 9rem;
+  }
+  100% {
+    font-size: 10rem;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    font-size: 10rem;
+  }
+  50% {
+    font-size: 9rem;
+  }
+  100% {
+    font-size: 10rem;
+  }
 }
 
 body {
@@ -338,12 +365,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 250px;
+  height: 225px;
   width: 200px;
   text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .movesLeft::before {
@@ -430,7 +457,7 @@ a:hover, a:focus {
 
 .piece {
   position: absolute;
-  background-image: url("../assets/toughPuzzleFour.jpg");
+  background-image: url("../assets/toughPuzzleOne.jpg");
   background-repeat: no-repeat;
   z-index: 100;
 }
@@ -530,4 +557,9 @@ button {
   border-radius: 10px;
   margin: 50px 20px 50px 0;
   border: 3px solid #fff8f0;
+}
+
+button:hover, button:focus {
+  background-color: #fff8f0;
+  border-color: #d58936;
 }

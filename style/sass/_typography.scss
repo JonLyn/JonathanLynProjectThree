@@ -8,6 +8,8 @@ html {
 body {
     font-family: $primaryFont;
     font-size: 1.6rem;
+    height: 100vh;
+
 }
 
 h1 {
@@ -37,10 +39,22 @@ h2 {
 }
 
 .almostGameOver {
-    font-size: 12rem;
+    font-size: 10rem;
     color: $accent;
+    animation: pulse .4s infinite ease;
 }
 
+@keyframes pulse {
+    0% {
+        font-size: 10rem;
+    }
+    50% {
+        font-size: 9rem;
+    }
+    100% { 
+        font-size: 10rem;
+    }
+}
 
 
 
