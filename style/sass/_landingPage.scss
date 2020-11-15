@@ -106,14 +106,8 @@
     }
 }
 
-@media (max-width: 450px) {
-    .startText {
-        text-align: center;
-    }
-        &::before {
+@media (max-width: 450px) {        
+        ::before {
             bottom: 0;
-            right: -215;
-            
-
         }
 }
