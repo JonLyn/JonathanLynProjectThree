@@ -1,0 +1,76 @@
+.introTitle {
+    margin: 30px auto 10px;
+}
+
+.rules {
+    width: 500px;
+    height: 250px;
+    background-color: $secondary;
+    border: 8px solid $bronze;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+.createdBy {
+    font-size: 1.6rem;
+    // color: $secondary;
+    color: $bronze;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.createdBy a {
+    color: inherit;
+}
+
+.createdBy span {
+    font-family: $secondaryFont;
+}
+
+.rules {
+    padding: 15px;
+        ul {
+            font-family: $secondaryFont;
+                li {
+                    padding: 10px;
+                }
+        }
+}
+
+.startGame a {
+    display: flex;
+    justify-content: right;
+    // align-items: center;
+    // position: relative;
+    color: $accent;
+    font-family: $primary;
+    // &:hover {
+    //     -webkit-text-stroke: 1px $secondary;
+    //     color: $secondary;
+    // }
+    
+
+}
+
+.startText {
+    font-size: 4rem;
+    margin: 30px 20px 0 0;
+        &:hover {
+        // -webkit-text-stroke: 1px $secondary;
+        color: $secondary;
+    }
+    
+    // text-align: right;
+    // position: absolute;
+    // line-height: 1;
+    // display: inline-block;
+    // height: 100px;
+}
+        
+.arrows {
+    font-size: 8rem;
+    // line-height: 1;
+    // height: 100px;
+}

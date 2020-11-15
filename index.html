@@ -1,46 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Permanent+Marker&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./style/style.css">
-
-    <title>Impuzzible Test Site</title>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='preconnect' href='https://fonts.gstatic.com'>
+    <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Permanent+Marker&display=swap'
+        rel='stylesheet'>
+    <link rel='stylesheet' href='./style/style.css'>
+    <title>Impuzzible Jigsaw Puzzle Intro Page</title>
 </head>
-
-
-    
 <body>
-    <header class='wrapper'>
-        <h1>Impuzzible</h1>
+    <header class='innerWrapper titleCreated'>
+        <h1 class='introTitle'>Impuzzible</h1>
+        <div class='createdBy'>
+            <h3><span>Created by </span><a href='https://www.joncraftscode.com/'>jonCraftsCode</a><span> at </span><a href='https://junocollege.com/'>Juno College</a></h3>
+        </div>
     </header>
-    <main>
-        <div class='wrapper puzzleAndCounter'>
-            <div class='nonPlayableArea'>
-                <div class='movesLeft'>
-                    <h2>Moves remaining</h2>
-                    <p class='counter'>0</p>
-                </div>
-                <button>Start / Restart</button>
-            </div>
-          
-            <div class='piecesBoundary'>
-                <div class='piecesContainer'>
-                </div>
-                <div class='puzzleContainer'>
-                </div>
-            </div>
+    <main class='innerWrapper'>
+        <div class='rules'>
+            <h2>How to play</h2>
+            <ul>
+                <li>Drag puzzle pieces to playing area and drop piece in the correct spot</li>
+                <li>Once all pieces are in the correct spot, it will match the image shown when starting</li>
+                <li>You have 50 moves total to complete the puzzle</li>
+            </ul>
+        </div>
+        <div class='startGame'>
+            <a href='./gamePage.html'>
+                <p class='startText'>Start game</p>
+                <p class='arrows'>>></p>
+            </a>
         </div>
     </main>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="jquery.ui.touch-punch.min.js"></script>
 </body>
-
-<script src='./withoutNamespacing.js'>
-    
-</script>
 </html>

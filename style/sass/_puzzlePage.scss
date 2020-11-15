@@ -4,6 +4,10 @@ body {
     background-color: $primary;
 }
 
+.gameTitle {
+    margin: 10px auto 20px;
+}
+
 // create mixin and move to typography
 .nonPlayableArea {
     display: flex;
@@ -33,6 +37,10 @@ body {
     justify-content: space-between;
 }
 
+.movesLeft h2 {
+    font-family: $secondaryFont;
+}
+
 .movesLeft::before {
     content: '';
     position: absolute;
@@ -42,6 +50,32 @@ body {
     right: -28px;
     bottom: -28px;
     left: -28px;
+}
+
+.counter {
+    font-size: 8rem;
+}
+
+.noMovesLeft {
+    font-size: 5rem;
+}
+
+.almostGameOver {
+    font-size: 10rem;
+    color: $accent;
+    animation: pulse .4s infinite ease;
+}
+
+@keyframes pulse {
+    0% {
+        font-size: 10rem;
+    }
+    50% {
+        font-size: 9rem;
+    }
+    100% { 
+        font-size: 10rem;
+    }
 }
 
 .piecesBoundary::before {
@@ -76,7 +110,7 @@ body {
             width: 400px;
             min-width: 400px;
             height: 400px;
-            z-index: 1000;
+            z-index: 100;
             background-image: url("../assets/toughPuzzleFour.jpg");
         }
 
@@ -100,23 +134,27 @@ body {
     border: 1px solid black;
 }
 
-a {
+.handle {
     width: 100px;
     min-width: 100px;
     height: 100px;
     min-height: 100px;
-    display: block;
+    display: block; 
         &:hover,
         &:focus {
             border: 2px solid red;
         }
 }
 
+.box {
+    opacity: 50;
+}
+
 .piece {
     position: absolute;
     background-image: url('../assets/toughPuzzleOne.jpg');
     background-repeat: no-repeat;
-    z-index: 100;
+    z-index: 50;   
 }
 
 .jigsaw0 {
@@ -185,11 +223,10 @@ a {
 }
 
 .zIndexLower {
-    z-index: 0;
+    z-index: 20;
 }
 
 button {
-    // margin-top: 50px;
     background-color: $bronze;
     color: $primary;
     width: 175px;
@@ -206,6 +243,11 @@ button {
             background-color: $secondary;
             border-color: $bronze;
         }
+}
+
+
+@media (max-width) {
+
 }
 
 

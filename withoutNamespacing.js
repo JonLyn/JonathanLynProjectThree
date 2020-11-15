@@ -8,7 +8,7 @@ const app = {};
 // Create puzzle pieces as <div>s holding an anchor tag to allow focus state in HTML
 for (let i = 0; i < 16; i++) {
     $('.piecesContainer').append(`<div class='piece jigsaw${i}'>
-    <a href="#"></a></div>`);
+    <a href="#" class='handle'></a></div>`);
 }
 // Create piece slots as <div>s in HTML
 for (let i = 0; i < 16; i++) {
@@ -61,20 +61,21 @@ const removeCounterPulse = () => {
 }
 
 // Create difficulty level
-const hardMode = 20;
+const hardMode = 10;
 // Create counter variable and function to keep track of the number to total moves remaining
 let movesRemainCount = hardMode;
 
 const movesRemainCounterFunk = () => {
-    if (movesRemainCount <= 15 && movesRemainCount > 0) {
+    if (movesRemainCount <= 5 && movesRemainCount > 0) {
         $('.counter').addClass('almostGameOver');
     } else if (movesRemainCount === 0) {
         // Decrease counter font and show no moves left
         $('.counter').toggleClass('noMovesLeft');
         removeCounterPulse();
-        $('.counter').html('No moves left');
+        // $('.counter').html('No moves left');
         // Notify player game is over if they have reached total moves allowed
-        alert('you lose!');
+        // alert('you lose!');
+        $('.counter').toggleClass('noMovesLeft');
         // reshuffle pieces using shuffle function
         shufflePieces();
         // Reset move counter and display on screen
@@ -138,9 +139,7 @@ const correctDropEvent = (correctPiece) => {
 
 const keyboardPress = () => {
     for (let i = 0; i < 16; i++) {
-        $(piecesArray[i]).on('keydown', handleKeys);
-        function handleKeys(e) {
-            // Don't scroll page
+        $(piecesArray[i]).on('keydown', (e) => {
             e.preventDefault();
             let position = '';
             const draggable = $(piecesArray[i]),
@@ -150,35 +149,37 @@ const keyboardPress = () => {
             position = draggable.position();
             console.log('piece was selected with the key');
 
-
             // Reposition if one of the directional keys is pressed
             switch (e.keyCode) {
                 case 9:
+                    draggable.toggleClass('box');
                     let next = $(piecesArray[i++]);
                     if (next > piecesArray.length) {
                         next = 0;
                     }
                     $(piecesArray[next]);
                     break;
-                case 37: 
-                    draggable.css({
-                        border: '3px solid red'
-                    });
+                case 37:
+                    
+                    //     ({
+                    //     border: '3px solid red'
+                    // });
                     position.left -= distance; break; // Left
-                case 38: 
-                    draggable.css({
-                        border: '3px solid red'
-                    });
+                case 38:
+                    // draggable.css({
+                    //     border: '3px solid red'
+                    // });
                     position.top -= distance; break; // Up
-                case 39: 
-                    draggable.css({
-                        border: '3px solid red'
-                    });
+                case 39:
+                    // draggable.css({
+                    //     border: '3px solid red'
+                    // });
                     position.left += distance; break; // Right
-                case 40: draggable.css({
-                    border: '3px solid red'
-                });
-                position.top += distance; break; // Down
+                case 40: 
+                    // draggable.css({
+                    //     border: '3px solid red'
+                    // });
+                    position.top += distance; break; // Down
                 default: return true; // Exit and bubble
             }
 
@@ -188,9 +189,10 @@ const keyboardPress = () => {
                 position.top + draggable.height() <= container.height()) {
                 draggable.css(position);
             }
-        }
+        })    
     }
 }
+
 
 // Display total move counter on screen
 const renderedCount = $('.counter').html(`${movesRemainCount}`);
@@ -208,7 +210,7 @@ totalDroppableArea();
 assignDroppableSlot();
 keyboardPress();
 restartButton();
-pressureCounter();
+// pressureCounter();
 
 
 

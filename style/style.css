@@ -237,11 +237,18 @@ html {
 
 /* SCSS Gradient */
 *,
-h1 {
+h1,
+h2 {
   margin: 0;
   border: 0;
   border: none;
   text-decoration: none;
+}
+
+.innerWrapper {
+  width: 600px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .wrapper {
@@ -276,57 +283,90 @@ h1 {
   font-size: 8rem;
   border: 10px solid #d58936;
   border-radius: 20px;
-  margin: 10px auto 20px;
 }
 
 h2 {
-  font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   color: #011638;
   font-weight: 800;
 }
 
-.counter {
-  font-size: 8rem;
+h3 {
+  font-weight: 400;
 }
 
-.counter.noMovesLeft {
-  font-size: 5rem;
+.introTitle {
+  margin: 30px auto 10px;
 }
 
-.almostGameOver {
-  font-size: 10rem;
+.rules {
+  width: 500px;
+  height: 250px;
+  background-color: #fff8f0;
+  border: 8px solid #d58936;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+
+.createdBy {
+  font-size: 1.6rem;
+  color: #d58936;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.createdBy a {
+  color: inherit;
+}
+
+.createdBy span {
+  font-family: "Montserrat", sans-serif;
+}
+
+.rules {
+  padding: 15px;
+}
+
+.rules ul {
+  font-family: "Montserrat", sans-serif;
+}
+
+.rules ul li {
+  padding: 10px;
+}
+
+.startGame a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
   color: #9e2b25;
-  -webkit-animation: pulse .4s infinite ease;
-          animation: pulse .4s infinite ease;
+  font-family: #011638;
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    font-size: 10rem;
-  }
-  50% {
-    font-size: 9rem;
-  }
-  100% {
-    font-size: 10rem;
-  }
+.startText {
+  font-size: 4rem;
+  margin: 30px 20px 0 0;
 }
 
-@keyframes pulse {
-  0% {
-    font-size: 10rem;
-  }
-  50% {
-    font-size: 9rem;
-  }
-  100% {
-    font-size: 10rem;
-  }
+.startText:hover {
+  color: #fff8f0;
+}
+
+.arrows {
+  font-size: 8rem;
 }
 
 body {
   background-color: #011638;
+}
+
+.gameTitle {
+  margin: 10px auto 20px;
 }
 
 .nonPlayableArea {
@@ -373,6 +413,10 @@ body {
           justify-content: space-between;
 }
 
+.movesLeft h2 {
+  font-family: "Montserrat", sans-serif;
+}
+
 .movesLeft::before {
   content: '';
   position: absolute;
@@ -382,6 +426,45 @@ body {
   right: -28px;
   bottom: -28px;
   left: -28px;
+}
+
+.counter {
+  font-size: 8rem;
+}
+
+.noMovesLeft {
+  font-size: 5rem;
+}
+
+.almostGameOver {
+  font-size: 10rem;
+  color: #9e2b25;
+  -webkit-animation: pulse .4s infinite ease;
+          animation: pulse .4s infinite ease;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    font-size: 10rem;
+  }
+  50% {
+    font-size: 9rem;
+  }
+  100% {
+    font-size: 10rem;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    font-size: 10rem;
+  }
+  50% {
+    font-size: 9rem;
+  }
+  100% {
+    font-size: 10rem;
+  }
 }
 
 .piecesBoundary::before {
@@ -419,7 +502,7 @@ body {
   width: 400px;
   min-width: 400px;
   height: 400px;
-  z-index: 1000;
+  z-index: 100;
   background-image: url("../assets/toughPuzzleFour.jpg");
 }
 
@@ -443,7 +526,7 @@ body {
   border: 1px solid black;
 }
 
-a {
+.handle {
   width: 100px;
   min-width: 100px;
   height: 100px;
@@ -451,15 +534,19 @@ a {
   display: block;
 }
 
-a:hover, a:focus {
+.handle:hover, .handle:focus {
   border: 2px solid red;
+}
+
+.box {
+  opacity: 50;
 }
 
 .piece {
   position: absolute;
   background-image: url("../assets/toughPuzzleOne.jpg");
   background-repeat: no-repeat;
-  z-index: 100;
+  z-index: 50;
 }
 
 .jigsaw0 {
@@ -543,7 +630,7 @@ a:hover, a:focus {
 }
 
 .zIndexLower {
-  z-index: 0;
+  z-index: 20;
 }
 
 button {
