@@ -5,6 +5,12 @@ body {
 }
 
 .gameTitle {
+    color: $secondary;
+    width: 600px;
+    text-align: center;
+    font-size: 8rem;
+    border: 10px solid $bronze;
+    border-radius: 20px;
     margin: 10px auto 20px;
 }
 

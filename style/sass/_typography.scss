@@ -8,23 +8,14 @@ html {
 body {
     font-family: $primaryFont;
     font-size: 1.6rem;
-    height: 100vh;
-
-}
-
-h1 {
-    color: $secondary;
-    width: 600px;
-    text-align: center;
-    font-size: 8rem;
-    border: 10px solid $bronze;
-    border-radius: 20px;
 }
 
 h2 {
-    text-transform: uppercase;
     color: $primary;
     font-weight: 800;
+    text-transform: uppercase;
+    
+    
 }
 
 h3 {

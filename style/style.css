@@ -246,7 +246,7 @@ h2 {
 }
 
 .innerWrapper {
-  width: 600px;
+  width: 60%;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -273,22 +273,12 @@ html {
 body {
   font-family: "Permanent Marker", cursive;
   font-size: 1.6rem;
-  height: 100vh;
-}
-
-h1 {
-  color: #fff8f0;
-  width: 600px;
-  text-align: center;
-  font-size: 8rem;
-  border: 10px solid #d58936;
-  border-radius: 20px;
 }
 
 h2 {
-  text-transform: uppercase;
   color: #011638;
   font-weight: 800;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -296,12 +286,17 @@ h3 {
 }
 
 .introTitle {
-  margin: 30px auto 10px;
+  color: #fff8f0;
+  width: 100%;
+  text-align: center;
+  font-size: 8rem;
+  border: 10px solid #d58936;
+  border-radius: 20px;
+  margin: 30px auto 10px auto;
 }
 
 .rules {
-  width: 500px;
-  height: 250px;
+  width: 80%;
   background-color: #fff8f0;
   border: 8px solid #d58936;
   border-radius: 15px;
@@ -310,7 +305,7 @@ h3 {
 
 .createdBy {
   font-size: 1.6rem;
-  color: #d58936;
+  color: #fff8f0;
   text-align: center;
   margin-bottom: 50px;
   letter-spacing: 2px;
@@ -321,7 +316,7 @@ h3 {
   color: inherit;
 }
 
-.createdBy span {
+.createdBy a span {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -337,28 +332,61 @@ h3 {
   padding: 10px;
 }
 
-.startGame a {
+.startGame {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
-  color: #9e2b25;
+  text-transform: none;
   font-family: #011638;
+}
+
+.startGame a {
+  color: #9e2b25;
 }
 
 .startText {
   font-size: 4rem;
   margin: 30px 20px 0 0;
+  position: relative;
+  right: 95px;
 }
 
 .startText:hover {
   color: #fff8f0;
 }
 
-.arrows {
+.startText::before {
+  content: '>>';
+  position: absolute;
+  font-family: #011638;
+  color: #9e2b25;
   font-size: 8rem;
+  right: -120px;
+  bottom: -15px;
+}
+
+@media (max-width: 915px) {
+  .introTitle {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 610px) {
+  .introTitle {
+    font-size: 4rem;
+  }
+  .startText {
+    width: 50%;
+    font-size: 3.5rem;
+    text-align: right;
+    margin-top: 15px;
+  }
+  .startText::before {
+    bottom: 0;
+  }
 }
 
 body {
@@ -366,6 +394,12 @@ body {
 }
 
 .gameTitle {
+  color: #fff8f0;
+  width: 600px;
+  text-align: center;
+  font-size: 8rem;
+  border: 10px solid #d58936;
+  border-radius: 20px;
   margin: 10px auto 20px;
 }
 

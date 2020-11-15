@@ -1,10 +1,18 @@
+
+
 .introTitle {
-    margin: 30px auto 10px;
+    color: $secondary;
+    width: 100%;
+    text-align: center;
+    font-size: 8rem;
+    border: 10px solid $bronze;
+    border-radius: 20px;
+    margin: 30px auto 10px auto;
 }
 
 .rules {
-    width: 500px;
-    height: 250px;
+    width: 80%;
+    // height: 250px;
     background-color: $secondary;
     border: 8px solid $bronze;
     border-radius: 15px;
@@ -13,24 +21,24 @@
 
 .createdBy {
     font-size: 1.6rem;
-    // color: $secondary;
-    color: $bronze;
+    color: $secondary;
+    // color: $bronze;
     text-align: center;
     margin-bottom: 50px;
     letter-spacing: 2px;
     text-transform: uppercase;
+        a {
+            color: inherit;
+                span {
+                    font-family: $secondaryFont;
+                }
+        }
 }
 
-.createdBy a {
-    color: inherit;
-}
-
-.createdBy span {
-    font-family: $secondaryFont;
-}
 
 .rules {
     padding: 15px;
+    // min-width: 300px;
         ul {
             font-family: $secondaryFont;
                 li {
@@ -39,38 +47,59 @@
         }
 }
 
-.startGame a {
+.startGame {
     display: flex;
     justify-content: right;
-    // align-items: center;
-    // position: relative;
-    color: $accent;
+    text-transform: none;
     font-family: $primary;
-    // &:hover {
-    //     -webkit-text-stroke: 1px $secondary;
-    //     color: $secondary;
-    // }
-    
-
+    a {
+        color: $accent; //need to change colour - not AAA
+    }
 }
 
 .startText {
     font-size: 4rem;
     margin: 30px 20px 0 0;
+    position: relative;
+    right: 95px;
         &:hover {
         // -webkit-text-stroke: 1px $secondary;
         color: $secondary;
     }
-    
-    // text-align: right;
-    // position: absolute;
-    // line-height: 1;
-    // display: inline-block;
-    // height: 100px;
 }
-        
-.arrows {
+
+.startText::before {
+    content: '>>';
+    position: absolute;
+    font-family: $primary;
+    color: $accent;
     font-size: 8rem;
-    // line-height: 1;
-    // height: 100px;
+    right: -120px;
+    bottom: -15px;
+
+}
+
+
+@media (max-width: 915px) {
+    .introTitle {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 610px) {
+    .introTitle {
+        font-size: 4rem;
+    }
+
+    .startText {
+        width: 50%;
+        font-size: 3.5rem;
+        text-align: right;
+        margin-top: 15px;
+            &::before {
+                bottom: 0;
+            }
+    }
+
+
 }
