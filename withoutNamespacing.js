@@ -14,16 +14,16 @@ $(function () {
     }
 
     // Insert puzzle pieces into an array to assign index numbers to each piece
-    const piece = document.getElementsByClassName('piece');
-    const piecesArray = Array.from(piece);
+    const $piece = $('.piece');
+    const piecesArray = Array.from($piece);
     // console.log(piecesArray);
 
     // Insert piece slots into an array to assign index numbers to each slot
-    const slot = document.getElementsByClassName('pieceSlot')
-    const slotArray = Array.from(slot);
+    const $slot = $('.pieceSlot')
+    const slotArray = Array.from($slot);
 
     // Assign draggable state and options to puzzle pieces so they can be dragged and snap to puzzle slots
-    const draggablePiece = $('.piece').draggable({
+    $('.piece').draggable({
         snap: '.pieceSlot',
         snapMode: 'inner',
         snapTolerance: 50,
@@ -59,9 +59,9 @@ $(function () {
     }
 
     // Create difficulty level
-    const hardMode = 10;
+    const moves = 50;
     // Create counter variable and function to keep track of the number to total moves remaining
-    let movesRemainCount = hardMode;
+    let movesRemainCount = moves;
 
     const movesRemainCounterFunk = () => {
         if (movesRemainCount <= 5 && movesRemainCount > 0) {
@@ -73,11 +73,15 @@ $(function () {
             // $('.counter').html('No moves left');
             // Notify player game is over if they have reached total moves allowed
             // alert('you lose!');
+            // Notify player they have won if they have placed all pieces successfully
+            $('.alert h2').text('Game over!');
+            $('.alert').toggleClass('show');
+            
             $('.counter').toggleClass('noMovesLeft');
             // reshuffle pieces using shuffle function
             shufflePieces();
             // Reset move counter and display on screen
-            movesRemainCount = hardMode;
+            movesRemainCount = moves;
             $('.counter').html(movesRemainCount);
         }
     }
@@ -92,8 +96,9 @@ $(function () {
     let correctCount = 0;
     const correctCountFunk = () => {
         // correctCount = 0;
-        if (correctCount === 3) {
+        if (correctCount === 16) {
             // Notify player they have won if they have placed all pieces successfully
+            $('.alert h2').text('You win!');
             $('.alert').toggleClass('show');
             // reshuffle pieces using shuffle function
             shufflePieces();
@@ -120,8 +125,8 @@ $(function () {
         })
 
         removeCounterPulse();
-        movesRemainCount = hardMode;
-        $('.counter').html(hardMode);
+        movesRemainCount = moves;
+        $('.counter').html(moves);
         correctCount = 0;
     }
 
@@ -159,6 +164,14 @@ $(function () {
                             next = 0;
                         }
                         $(piecesArray[next]);
+                        break;
+                    case 66:
+                        // draggable.toggleClass('box');
+                        let back = $(piecesArray[i--]);
+                        if (back > piecesArray.length) {
+                            back = 0;
+                        }
+                        $(piecesArray[back]);
                         break;
                     case 37:
 
