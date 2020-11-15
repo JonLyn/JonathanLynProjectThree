@@ -3,7 +3,7 @@
 // Impuzzible
 // A landing page introducing the game and rules
 // Point users to click link to go to game page
-$(function() {
+$(function () {
     for (let i = 0; i < 16; i++) {
         $('.piecesContainer').append(`<div class='piece jigsaw${i}'>
     <a href="#" class='handle'></a></div>`);
@@ -14,12 +14,12 @@ $(function() {
     }
 
     // Insert puzzle pieces into an array to assign index numbers to each piece
-    const piece = $('.piece');
+    const piece = document.getElementsByClassName('piece');
     const piecesArray = Array.from(piece);
     // console.log(piecesArray);
 
     // Insert piece slots into an array to assign index numbers to each slot
-    const slot = ('pieceSlot');
+    const slot = document.getElementsByClassName('pieceSlot')
     const slotArray = Array.from(slot);
 
     // Assign draggable state and options to puzzle pieces so they can be dragged and snap to puzzle slots
@@ -115,8 +115,8 @@ $(function() {
             })
             $(eachPiece).draggable('enable');
         })
-        $('button').mouseup(function () { 
-            this.blur() 
+        $('button').mouseup(function () {
+            this.blur()
         })
 
         removeCounterPulse();
@@ -156,18 +156,10 @@ $(function() {
                         // draggable.toggleClass('box');
                         let next = $(piecesArray[i++]);
                         if (next > piecesArray.length) {
-                            i = 0;
+                            next = 0;
                         }
-                        $(piecesArray[i]);
-                        break;    
-                    case 66:
-                        // draggable.toggleClass('box');
-                        let back = $(piecesArray[i--]);
-                        if (back > piecesArray.length) {
-                            back = 0;
-                        }
-                        $(piecesArray[back]);
-                        break;     
+                        $(piecesArray[next]);
+                        break;
                     case 37:
 
                         //     ({
@@ -227,75 +219,5 @@ $(function() {
     keyboardPress();
     reShuffleButton();
     replayButton();
-    renderedCount();
-
-// pressureCounter();
-
-
-
-
-// const keyboardPress = () => {
-//     for (let i = 0; i < 16; i++) {
-//         $(piecesArray[i]).on('keydown', handleKeys);
-//         function handleKeys(e) {
-//             e.preventDefault();
-//             let position = '';
-//             const draggable = $(piecesArray[i]);
-//             // draggable.css({
-//             //     border: '1px solid red'
-//             // });
-
-//             const container = $('.piecesBoundary');
-//             const distance = 3; // Distance in pixels the draggable should be moved
-
-//             position = draggable.position();
-//             console.log('piece was selected with the key');
-
-//             const keyBoundary = (keyIndex) => {
-//                 if (keyindex.left > keyindex.top >= 0 &&
-//                     keyindex.left + draggable.width() <= container.width() &&
-//                     keyindex.top + draggable.height() <= container.height()) {
-//                     draggable.css(keyindex);
-//                 }
-//             };
-
-
-
-//             // Reposition if one of the directional keys is pressed
-//             switch (e.keyCode) {
-//                 case 9: let next = i++;
-//                     console.log(next);
-//                     if (next > 16) {
-//                         next -= 17;
-//                         console.log(next);
-//                     }
-//                     $(piecesArray[next]);
-//                     console.log($(piecesArray[next]));
-//                     break;
-//                 case 37: position.left -= distance; break; // Left
-//                 case 38: position.top -= distance; break; // Up
-//                 case 39: position.left += distance; break; // Right
-//                 case 40: position.top += distance; break; // Down
-//                 default: return true; // Exit and bubble
-//             }
-
-
-
-//             // Keep draggable within container
-//             const keyBoundary = (keyIndex) => {
-
-//             }
-//         }
-//     }
-// }
-
-
 
 });
-
-// Create puzzle pieces as <div>s holding an anchor tag to allow focus state in HTML
-
-
-
-
-

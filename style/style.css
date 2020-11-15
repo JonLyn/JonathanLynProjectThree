@@ -254,7 +254,7 @@ button {
 }
 
 .wrapper {
-  width: 80%;
+  width: 90%;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -415,6 +415,14 @@ body {
   margin: 10px auto 5px auto;
 }
 
+.puzzleAndCounter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .counterAndRestart {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -429,7 +437,8 @@ body {
 }
 
 .movesLeft,
-.piecesBoundary {
+.piecesBoundary,
+.controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -438,6 +447,8 @@ body {
   background-color: #fff8f0;
   z-index: 10;
   position: relative;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .movesLeft {
@@ -466,11 +477,12 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.movesLeft::before {
+.movesLeft::before,
+.controls::before {
   content: '';
   position: absolute;
   border: 8px solid #d58936;
-  border-radius: 23px;
+  border-radius: 30px;
   top: -28px;
   right: -28px;
   bottom: -28px;
@@ -479,10 +491,6 @@ body {
 
 .counter {
   font-size: 8rem;
-}
-
-.noMovesLeft {
-  font-size: 5rem;
 }
 
 .almostGameOver {
@@ -516,6 +524,27 @@ body {
   100% {
     font-size: 10rem;
   }
+}
+
+.controls {
+  width: 85%;
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  -ms-flex-line-pack: right;
+      align-content: right;
+}
+
+.controlsTitle {
+  list-style: none;
+}
+
+.controlsTitle h3 {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.controlsTitle ul {
+  padding-left: 10px;
 }
 
 .piecesBoundary::before {
@@ -749,4 +778,27 @@ body {
 
 .hide {
   opacity: 1;
+}
+
+@media (max-width: 930px) {
+  .counterAndRestart {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .movesLeft {
+    width: 420px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 100px;
+  }
+  .movesLeft h2 {
+    margin-bottom: 20px;
+  }
+  .gameReplay {
+    margin-top: 50px;
+  }
 }

@@ -15,7 +15,11 @@ body {
     margin: 10px auto 5px auto;
 }
 
-// create mixin and move to typography
+.puzzleAndCounter {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .counterAndRestart {
     display: flex;
     flex-direction: column;
@@ -23,13 +27,15 @@ body {
 }
 
 .movesLeft,
-.piecesBoundary {
+.piecesBoundary,
+.controls {
     display: flex;
     border: 20px solid $secondary;
     border-radius: 15px;
     background-color: $secondary;
     z-index: 10;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .movesLeft {
@@ -48,11 +54,12 @@ body {
     font-family: $secondaryFont;
 }
 
-.movesLeft::before {
+.movesLeft::before,
+.controls::before {
     content: '';
     position: absolute;
     border: 8px solid $bronze;
-    border-radius: 23px;
+    border-radius: 30px;
     top: -28px;
     right: -28px;
     bottom: -28px;
@@ -63,9 +70,9 @@ body {
     font-size: 8rem;
 }
 
-.noMovesLeft {
-    font-size: 5rem;
-}
+// .noMovesLeft {
+//     font-size: 5rem;
+// }
 
 .almostGameOver {
     font-size: 10rem;
@@ -85,6 +92,25 @@ body {
         font-size: 10rem;
     }
 }
+
+.controls {
+    width: 85%;
+    margin-top: 20px;
+    font-family: $secondaryFont;
+    align-content: right;
+}
+
+.controlsTitle {
+    list-style: none;
+        & h3 {
+            text-transform: uppercase;
+            font-weight: 800;    
+        }
+        & ul {
+                    padding-left: 10px;
+                }
+}
+
 
 .piecesBoundary::before {
     content: '';
@@ -315,7 +341,24 @@ body {
 }
 
 
-@media (max-width) {
+@media (max-width: 930px) {
+    .counterAndRestart {
+        flex-direction: row;
+    }
+
+    .movesLeft {
+        width: 420px;
+        flex-direction: row;
+        height: 100px;
+            & h2 {
+                margin-bottom: 20px;
+            }
+    }
+
+    .gameReplay {
+        margin-top: 50px;
+    }
+
 
 }
 
