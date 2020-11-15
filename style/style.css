@@ -407,7 +407,7 @@ body {
 
 .gameTitle {
   color: #fff8f0;
-  width: 100%;
+  width: 845px;
   text-align: center;
   font-size: 8rem;
   border: 10px solid #d58936;
@@ -790,13 +790,13 @@ body {
             flex-direction: row;
   }
   .movesLeft {
-    width: 250px;
+    width: 240px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
     height: 100px;
-    margin-right: 40px;
+    margin: 0 40px 0 0;
   }
   .movesLeft h2 {
     margin-bottom: 20px;
@@ -814,11 +814,13 @@ body {
   .puzzleContainer {
     margin: 0 auto;
   }
-  .piecesBoundary {
+  .piecesBoundary,
+  .createdBy {
     width: 450px;
     margin: 0 auto;
   }
-  .controls {
+  .controls,
+  .gameTitle {
     width: 450px;
   }
   .createdBy {

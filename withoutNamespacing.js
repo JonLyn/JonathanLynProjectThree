@@ -112,12 +112,23 @@ $(function () {
     // Apply random start(x & y) positioning and positive z-index to each piece using for loop and shuffle pieces
     const shufflePieces = function () {
         piecesArray.forEach((eachPiece) => {
-            const randomX = (Math.floor(Math.random() * 40) + 15);
-            const randomY = (Math.floor(Math.random() * 275) + 10);
-            $(eachPiece).css({
-                'left': `${randomX}px`,
-                'top': `${randomY}px`,
-            })
+            if ($(window).width() > 960) {
+                const randomX = (Math.floor(Math.random() * 40) + 15);
+                const randomY = (Math.floor(Math.random() * 275) + 10);
+                $(eachPiece).css({
+                    'left': `${randomX}px`,
+                    'top': `${randomY}px`,
+                })
+            } else {
+                const randomX = (Math.floor(Math.random() * 275) + 15);
+                const randomY = (Math.floor(Math.random() * 50) + 10);
+                $(eachPiece).css({
+                    'left': `${randomX}px`,
+                    'top': `${randomY}px`,
+                })
+            }
+
+            
             $(eachPiece).draggable('enable');
         })
         $('button').mouseup(function () {

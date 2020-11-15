@@ -7,7 +7,7 @@ body {
 
 .gameTitle {
     color: $secondary;
-    width: 100%;
+    width: 845px;
     text-align: center;
     font-size: 8rem;
     border: 10px solid $bronze;
@@ -350,10 +350,10 @@ body {
     }
 
     .movesLeft {
-        width: 250px;
+        width: 240px;
         flex-direction: row;
         height: 100px;
-        margin-right: 40px;
+        margin: 0 40px 0 0;
             & h2 {
                 margin-bottom: 20px;
                 width: 50%;
@@ -375,12 +375,14 @@ body {
         margin: 0 auto;
     }
 
-    .piecesBoundary {
+    .piecesBoundary,
+    .createdBy {
         width: 450px;
         margin: 0 auto;
     }
 
-    .controls {
+    .controls,
+    .gameTitle {
         width: 450px;
     }
 
