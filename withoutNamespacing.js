@@ -92,9 +92,9 @@ $(function() {
     let correctCount = 0;
     const correctCountFunk = () => {
         // correctCount = 0;
-        if (correctCount === 16) {
+        if (correctCount === 3) {
             // Notify player they have won if they have placed all pieces successfully
-            alert('you win!');
+            $('.alert').toggleClass('show');
             // reshuffle pieces using shuffle function
             shufflePieces();
             // Re-enable draggable state to pieces
@@ -118,6 +118,7 @@ $(function() {
         $('button').mouseup(function () { 
             this.blur() 
         })
+
         removeCounterPulse();
         movesRemainCount = hardMode;
         $('.counter').html(hardMode);
@@ -152,7 +153,7 @@ $(function() {
                 // Reposition if one of the directional keys is pressed
                 switch (e.keyCode) {
                     case 9:
-                        draggable.toggleClass('box');
+                        // draggable.toggleClass('box');
                         let next = $(piecesArray[i++]);
                         if (next > piecesArray.length) {
                             next = 0;
@@ -198,8 +199,15 @@ $(function() {
     const renderedCount = $('.counter').html(`${movesRemainCount}`);
 
     // 'Reset' button to reshuffle pieces and start puzzle over again
-    const restartButton = () => {
-        $('button').on('click', function () {
+    const reShuffleButton = () => {
+        $('.gameReplay').on('click', function () {
+            shufflePieces();
+        })
+    }
+
+    const replayButton = () => {
+        $('.alertReplay').on('click', function () {
+            $('.alert').toggleClass('show');
             shufflePieces();
         })
     }
@@ -209,8 +217,10 @@ $(function() {
     totalDroppableArea();
     assignDroppableSlot();
     keyboardPress();
-    restartButton();
+    reShuffleButton();
+    replayButton();
     renderedCount();
+
 // pressureCounter();
 
 
