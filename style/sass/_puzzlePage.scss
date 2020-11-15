@@ -18,6 +18,7 @@ body {
 .puzzleAndCounter {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .counterAndRestart {
@@ -388,6 +389,10 @@ body {
 
     .createdBy {
         margin-bottom: 15px;
+    }
+
+    .counter {
+        margin-bottom: 10px;
     }
 }
 
