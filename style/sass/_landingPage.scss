@@ -107,7 +107,13 @@
 }
 
 @media (max-width: 450px) {
-    .startText::before {
-        bottom: 0;
+    .startText {
+        text-align: center;
     }
+        &::before {
+            bottom: 0;
+            right: -215;
+            
+
+        }
 }

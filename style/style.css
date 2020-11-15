@@ -390,8 +390,12 @@ h3 {
 }
 
 @media (max-width: 450px) {
-  .startText::before {
+  .startText {
+    text-align: center;
+  }
+  ::before {
     bottom: 0;
+    right: -215;
   }
 }
 
