@@ -14,12 +14,12 @@ $(function() {
     }
 
     // Insert puzzle pieces into an array to assign index numbers to each piece
-    const piece = document.getElementsByClassName('piece');
+    const piece = $('.piece');
     const piecesArray = Array.from(piece);
     // console.log(piecesArray);
 
     // Insert piece slots into an array to assign index numbers to each slot
-    const slot = document.getElementsByClassName('pieceSlot')
+    const slot = ('pieceSlot');
     const slotArray = Array.from(slot);
 
     // Assign draggable state and options to puzzle pieces so they can be dragged and snap to puzzle slots
@@ -156,10 +156,18 @@ $(function() {
                         // draggable.toggleClass('box');
                         let next = $(piecesArray[i++]);
                         if (next > piecesArray.length) {
-                            next = 0;
+                            i = 0;
                         }
-                        $(piecesArray[next]);
-                        break;
+                        $(piecesArray[i]);
+                        break;    
+                    case 66:
+                        // draggable.toggleClass('box');
+                        let back = $(piecesArray[i--]);
+                        if (back > piecesArray.length) {
+                            back = 0;
+                        }
+                        $(piecesArray[back]);
+                        break;     
                     case 37:
 
                         //     ({

@@ -4,6 +4,7 @@ body {
     background-color: $primary;
 }
 
+
 .gameTitle {
     color: $secondary;
     width: 100%;
@@ -69,6 +70,7 @@ body {
 .almostGameOver {
     font-size: 10rem;
     color: $accent;
+    transform-origin: center;
     animation: pulse .4s infinite ease;
 }
 
@@ -289,6 +291,7 @@ body {
     color: $secondary;
     text-align: center;
     width: 50%;
+    max-width: 500px;
     padding: 50px 0;
     border: 10px solid $bronze;
     border-radius: 10px;
@@ -298,7 +301,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 200;
-        
+        &::before {
+            border: 2px solid black;
+        }
 }
 
 .show {

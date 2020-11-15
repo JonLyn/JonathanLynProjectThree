@@ -327,7 +327,7 @@ h3 {
 }
 
 .rules {
-  padding: 15px;
+  padding: 20px 20px 20px 30px;
 }
 
 .rules ul {
@@ -342,9 +342,9 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-transform: none;
   font-family: #011638;
 }
@@ -357,7 +357,7 @@ h3 {
   font-size: 4rem;
   margin: 30px 20px 0 10px;
   position: relative;
-  left: -90px;
+  left: -45px;
 }
 
 .startText:hover, .startText:focus {
@@ -488,6 +488,8 @@ body {
 .almostGameOver {
   font-size: 10rem;
   color: #9e2b25;
+  -webkit-transform-origin: center;
+          transform-origin: center;
   -webkit-animation: pulse .4s infinite ease;
           animation: pulse .4s infinite ease;
 }
@@ -723,6 +725,7 @@ body {
   color: #fff8f0;
   text-align: center;
   width: 50%;
+  max-width: 500px;
   padding: 50px 0;
   border: 10px solid #d58936;
   border-radius: 10px;
@@ -734,6 +737,10 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 200;
+}
+
+.alert::before {
+  border: 2px solid black;
 }
 
 .show {
