@@ -87,9 +87,13 @@
 }
 
 @media (max-width: 610px) {
-    .introTitle {
-        font-size: 4rem;
+    .innerWrapper {
+        width: 95%;
     }
+
+    // .introTitle {
+    //     font-size: 4rem;
+    // }
 
     .startText {
         width: 50%;
@@ -97,9 +101,13 @@
         text-align: right;
         margin-top: 15px;
             &::before {
-                bottom: 0;
+                bottom: -15;
             }
     }
+}
 
-
+@media (max-width: 450px) {
+    .startText::before {
+        bottom: 0;
+    }
 }
