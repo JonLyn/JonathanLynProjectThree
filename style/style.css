@@ -352,7 +352,7 @@ h3 {
   font-size: 4rem;
   margin: 30px 20px 0 10px;
   position: relative;
-  right: 95px;
+  left: -90px;
 }
 
 .startText:hover {
