@@ -527,7 +527,7 @@ body {
 }
 
 .controls {
-  width: 85%;
+  width: 845px;
   margin-top: 20px;
   font-family: "Montserrat", sans-serif;
   -ms-flex-line-pack: right;
@@ -779,7 +779,7 @@ body {
   opacity: 1;
 }
 
-@media (max-width: 930px) {
+@media (max-width: 960px) {
   .gameTitle {
     font-size: 5rem;
   }
@@ -790,18 +790,20 @@ body {
             flex-direction: row;
   }
   .movesLeft {
-    width: 420px;
+    width: 250px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
     height: 100px;
+    margin-right: 40px;
   }
   .movesLeft h2 {
     margin-bottom: 20px;
+    width: 50%;
   }
   .gameReplay {
-    margin-top: 50px;
+    margin: 50px 0;
   }
   .piecesContainer {
     width: 400px;
@@ -815,6 +817,9 @@ body {
   .piecesBoundary {
     width: 450px;
     margin: 0 auto;
+  }
+  .controls {
+    width: 450px;
   }
   .createdBy {
     margin-bottom: 15px;

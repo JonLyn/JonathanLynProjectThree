@@ -94,7 +94,7 @@ body {
 }
 
 .controls {
-    width: 85%;
+    width: 845px;
     margin-top: 20px;
     font-family: $secondaryFont;
     align-content: right;
@@ -340,7 +340,7 @@ body {
 }
 
 
-@media (max-width: 930px) {
+@media (max-width: 960px) {
 .gameTitle {
     font-size: 5rem;
 }
@@ -350,16 +350,18 @@ body {
     }
 
     .movesLeft {
-        width: 420px;
+        width: 250px;
         flex-direction: row;
         height: 100px;
+        margin-right: 40px;
             & h2 {
                 margin-bottom: 20px;
+                width: 50%;
             }
     }
 
     .gameReplay {
-        margin-top: 50px;
+        margin: 50px 0;
     }
 
     .piecesContainer {
@@ -376,6 +378,10 @@ body {
     .piecesBoundary {
         width: 450px;
         margin: 0 auto;
+    }
+
+    .controls {
+        width: 450px;
     }
 
     .createdBy {
