@@ -780,6 +780,9 @@ body {
 }
 
 @media (max-width: 930px) {
+  .gameTitle {
+    font-size: 5rem;
+  }
   .counterAndRestart {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -799,5 +802,21 @@ body {
   }
   .gameReplay {
     margin-top: 50px;
+  }
+  .piecesContainer {
+    width: 400px;
+    height: 170px;
+    margin-bottom: 15px;
+    margin: 0 auto 15px;
+  }
+  .puzzleContainer {
+    margin: 0 auto;
+  }
+  .piecesBoundary {
+    width: 450px;
+    margin: 0 auto;
+  }
+  .createdBy {
+    margin-bottom: 15px;
   }
 }
