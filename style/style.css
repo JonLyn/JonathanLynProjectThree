@@ -706,10 +706,14 @@ body {
   font-weight: 800;
   border-radius: 10px;
   border: 3px solid #fff8f0;
-  display: inline-block;
 }
 
 .alertReplay:hover, .alertReplay:focus {
+  background-color: #fff8f0;
+  border-color: #d58936;
+}
+
+.alert:focus-within {
   background-color: #fff8f0;
   border-color: #d58936;
 }
@@ -737,5 +741,5 @@ body {
 }
 
 .hide {
-  display: none;
+  opacity: 1;
 }
