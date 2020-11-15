@@ -31,6 +31,10 @@
         }
         a {
             color: inherit;
+                &:hover,
+                &:focus {
+                    color: $bronze;
+                }
         }
 }
 
@@ -61,8 +65,8 @@
     margin: 30px 20px 0 10px;
     position: relative;
     left: -90px;
-        &:hover {
-        // -webkit-text-stroke: 1px $secondary;
+        &:hover,
+        &:focus {
         color: $secondary;
     }
 }
