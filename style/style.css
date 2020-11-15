@@ -238,7 +238,8 @@ html {
 /* SCSS Gradient */
 *,
 h1,
-h2 {
+h2,
+button {
   margin: 0;
   border: 0;
   border: none;
@@ -252,7 +253,7 @@ h2 {
 }
 
 .wrapper {
-  width: 80vw;
+  width: 80%;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -312,12 +313,12 @@ h3 {
   text-transform: uppercase;
 }
 
-.createdBy a {
-  color: inherit;
+.createdBy span {
+  font-family: "Montserrat", sans-serif;
 }
 
-.createdBy a span {
-  font-family: "Montserrat", sans-serif;
+.createdBy a {
+  color: inherit;
 }
 
 .rules {
@@ -364,8 +365,8 @@ h3 {
   font-family: #011638;
   color: #9e2b25;
   font-size: 8rem;
-  right: -120px;
-  bottom: -15px;
+  right: -115px;
+  top: -30px;
 }
 
 @media (max-width: 915px) {
@@ -385,13 +386,13 @@ h3 {
     margin-top: 15px;
   }
   .startText::before {
-    bottom: -15;
+    top: -33px;
   }
 }
 
-@media (max-width: 450px) {
-  ::before {
-    bottom: 0;
+@media (max-width: 400px) {
+  .startText::before {
+    top: -15px;
   }
 }
 
@@ -401,15 +402,15 @@ body {
 
 .gameTitle {
   color: #fff8f0;
-  width: 600px;
+  width: 100%;
   text-align: center;
   font-size: 8rem;
   border: 10px solid #d58936;
   border-radius: 20px;
-  margin: 10px auto 20px;
+  margin: 10px auto 5px auto;
 }
 
-.nonPlayableArea {
+.counterAndRestart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -435,7 +436,9 @@ body {
 }
 
 .movesLeft {
-  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-orient: vertical;
@@ -445,8 +448,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 225px;
+  margin-right: 20px;
   width: 200px;
+  height: 225px;
   text-align: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -578,10 +582,6 @@ body {
   border: 2px solid red;
 }
 
-.box {
-  opacity: 50;
-}
-
 .piece {
   position: absolute;
   background-image: url("../assets/toughPuzzleOne.jpg");
@@ -689,4 +689,10 @@ button {
 button:hover, button:focus {
   background-color: #fff8f0;
   border-color: #d58936;
+}
+
+.alert {
+  background-color: #fff8f0;
+  color: #fff8f0;
+  width: 50%;
 }

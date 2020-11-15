@@ -22,16 +22,15 @@
 .createdBy {
     font-size: 1.6rem;
     color: $secondary;
-    // color: $bronze;
     text-align: center;
     margin-bottom: 50px;
     letter-spacing: 2px;
     text-transform: uppercase;
+        span {
+            font-family: $secondaryFont;
+        }
         a {
             color: inherit;
-                span {
-                    font-family: $secondaryFont;
-                }
         }
 }
 
@@ -74,8 +73,8 @@
     font-family: $primary;
     color: $accent;
     font-size: 8rem;
-    right: -120px;
-    bottom: -15px;
+    right: -115px;
+    top: -30px;
 
 }
 
@@ -91,23 +90,20 @@
         width: 95%;
     }
 
-    // .introTitle {
-    //     font-size: 4rem;
-    // }
-
     .startText {
         width: 50%;
         font-size: 3.5rem;
         text-align: right;
         margin-top: 15px;
             &::before {
-                bottom: -15;
+                top: -33px;
+                
             }
     }
 }
 
-@media (max-width: 450px) {        
-        ::before {
-            bottom: 0;
+@media (max-width: 400px) {        
+        .startText::before {
+            top: -15px;
         }
 }

@@ -12,20 +12,21 @@
 </head>
     
 <body>
-    <header class='wrapper'> 
+    <header class='innerWrapper'> 
         <h1 class='gameTitle'>Impuzzible</h1>
-        <h3>Created by <a href='https://www.joncraftscode.com/'>jonCraftsCode</a> at <a href='https://junocollege.com/'>Juno College</a></h3>
+        <div class='createdBy'>
+            <h3><span>Created by </span><a href='https://www.joncraftscode.com/'>jonCraftsCode</a><span> at </span><a href='https://junocollege.com/'>Juno College</a></h3>
+        </div>
     </header>
     <main>
         <div class='wrapper puzzleAndCounter'>
-            <div class='nonPlayableArea'>
+            <div class='counterAndRestart'>
                 <div class='movesLeft'>
                     <h2>Moves remaining</h2>
                     <p class='counter'>0</p>
                 </div>
                 <button>Start / Restart</button>
             </div>
-          
             <div class='piecesBoundary'>
                 <div class='piecesContainer'>
                 </div>
@@ -33,6 +34,12 @@
                 </div>
             </div>
         </div>
+
+        <div class='alert'>
+            <h2>You win!</h2>
+            <button>Play again</button>
+        </div>
+
     </main>
     <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
     <script src='https://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>

@@ -16,12 +16,14 @@ $secondary: rgba(255, 248, 240, 1);
 $accent: rgba(158, 43, 37, 1);
 $roman-silver: rgba(125, 132, 145, 1);
 $bronze: rgba(213, 137, 54, 1);
+$hover: rgba(255, 0, 0, 1);
 
 
 
 *,
 h1, 
-h2 {
+h2,
+button {
     margin: 0;
     border: 0;
     border: none;
@@ -35,7 +37,7 @@ h2 {
 }
 
 .wrapper {
-    width: 80vw;
+    width: 80%;
     max-width: 1000px;
     margin: 0 auto;
 }
