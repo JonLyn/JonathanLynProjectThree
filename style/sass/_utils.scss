@@ -13,9 +13,8 @@ $gradient-radial: radial-gradient(#fff8f0ff, #9e2b25ff, #011638ff, #087ca7ff, #d
 
 $primary:  rgba(1, 22, 56, 1);
 $secondary: rgba(255, 248, 240, 1);
-$accent: rgba(158, 43, 37, 1);
-$roman-silver: rgba(125, 132, 145, 1);
-$bronze: rgba(213, 137, 54, 1);
+$tertiary: rgb(49, 175, 212);
+$accent: #e84941;
 $hover: rgba(255, 0, 0, 1);
 
 
@@ -34,7 +33,7 @@ button {
 
 
 .wrapper {
-    width: 100%;
+    width: 90%;
     max-width: 1000px;
     margin: 0 auto;
 }

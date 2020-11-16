@@ -2,50 +2,49 @@
 
 .introTitle {
     color: $secondary;
-    width: 100%;
+    width: 80%;
+    max-width: 800px;
     text-align: center;
     font-size: 8rem;
-    border: 10px solid $bronze;
+    border: 10px solid $tertiary;
     border-radius: 20px;
     margin: 30px auto 10px auto;
 }
 
 .rules {
     width: 80%;
-    // height: 250px;
     background-color: $secondary;
-    border: 8px solid $bronze;
+    border: 8px solid $tertiary;
     border-radius: 15px;
     margin: 0 auto;
-}
-
-.createdBy {
-    font-size: 1.6rem;
-    color: $secondary;
-    text-align: center;
-    margin-bottom: 50px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-        span {
-            font-family: $secondaryFont;
-        }
-        a {
-            color: inherit;
-                &:hover,
-                &:focus {
-                    color: $bronze;
-                }
-        }
-}
-
-
-.rules {
     padding: 20px 20px 20px 30px;
-    // min-width: 300px;
         ul {
             font-family: $secondaryFont;
                 li {
                     padding: 10px;
+                }
+        }
+}
+
+.createdBy {
+    width: 80%;
+    font-family: $secondaryFont;
+    font-size: 1.6rem;
+    color: $secondary;
+    text-align: center;
+    margin: 0 auto 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    white-space: normal;
+        // span {
+        //     font-family: $secondaryFont;
+        // }
+        a {
+            color: inherit;
+                &:hover,
+                &:focus {
+                    color: $tertiary;
                 }
         }
 }
@@ -85,15 +84,11 @@
 
 @media (max-width: 915px) {
     .introTitle {
-        font-size: 5rem;
+        font-size: 4.5rem;
     }
 }
 
 @media (max-width: 610px) {
-    .innerWrapper {
-        width: 95%;
-    }
-
     .startText {
         width: 50%;
         font-size: 3.5rem;
@@ -106,8 +101,14 @@
     }
 }
 
+
+
 @media (max-width: 400px) {        
-        .startText::before {
-            top: -15px;
-        }
+    .startText::before {
+        top: -15px;
+    }
+
+    .introTitle {
+        font-size: 4rem;
+    }
 }

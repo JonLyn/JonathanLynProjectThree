@@ -6,14 +6,14 @@
 $(function () {
     for (let i = 0; i < 16; i++) {
         $('.piecesContainer').append(`<div class='piece jigsaw${i}'>
-    <a href="#" class='handle'></a></div>`);
+    <a href='' class='handle'></a></div>`);
     }
     // Create piece slots as <div>s in HTML
     for (let i = 0; i < 16; i++) {
         $('.puzzleContainer').append(`<div class='pieceSlot slot${i}'></div>`);
     }
 
-    // Insert puzzle pieces into an array to assign index numbers to each piece
+        // Insert puzzle pieces into an array to assign index numbers to each piece
     const $piece = $('.piece');
     const piecesArray = Array.from($piece);
     // console.log(piecesArray);
@@ -22,8 +22,13 @@ $(function () {
     const $slot = $('.pieceSlot')
     const slotArray = Array.from($slot);
 
+    // Remove click function on <a> tag within the puzzle pieces
+    $('.handle').on('click', (e) => {
+        e.preventDefault();
+    })
+
     // Assign draggable state and options to puzzle pieces so they can be dragged and snap to puzzle slots
-    $('.piece').draggable({
+    $piece.draggable({
         snap: '.pieceSlot',
         snapMode: 'inner',
         snapTolerance: 50,
@@ -161,7 +166,7 @@ $(function () {
                 let position = '';
                 const draggable = $(piecesArray[i]),
                     container = $('.piecesBoundary'),
-                    distance = 5; // Distance in pixels the draggable should be moved
+                    distance = 3; // Distance in pixels the draggable should be moved
 
                 position = draggable.position();
                 console.log('piece was selected with the key');

@@ -10,7 +10,7 @@ body {
     width: 845px;
     text-align: center;
     font-size: 8rem;
-    border: 10px solid $bronze;
+    border: 10px solid $tertiary;
     border-radius: 20px;
     margin: 10px auto 5px auto;
 }
@@ -59,7 +59,7 @@ body {
 .controls::before {
     content: '';
     position: absolute;
-    border: 8px solid $bronze;
+    border: 8px solid $tertiary;
     border-radius: 30px;
     top: -28px;
     right: -28px;
@@ -120,7 +120,7 @@ body {
     right: -28px;
     bottom: -28px;
     left: -28px;
-    border: 8px solid $bronze;
+    border: 8px solid $tertiary;
     border-radius: 23px;
 }
 
@@ -139,15 +139,15 @@ body {
     margin-left: 15px;
 }
 
-.imagePreview {
-            content: '';
-            position: absolute;
-            width: 400px;
-            min-width: 400px;
-            height: 400px;
-            z-index: 100;
-            background-image: url("../assets/toughPuzzleFour.jpg");
-        }
+// .imagePreview {
+//             content: '';
+//             position: absolute;
+//             width: 400px;
+//             min-width: 400px;
+//             height: 400px;
+//             z-index: 100;
+//             background-image: url("../assets/toughPuzzleFour.jpg");
+//         }
 
 .puzzleContainer::before {
     content: '',
@@ -266,7 +266,7 @@ body {
 }
 
 .gameReplay {
-    background-color: $bronze;
+    background-color: $tertiary;
     color: $primary;
     width: 175px;
     height: 50px;
@@ -279,13 +279,13 @@ body {
         &:hover,
         &:focus {
             background-color: $secondary;
-            border-color: $bronze;
+            border-color: $tertiary;
         }
 }
 
 
 .alertReplay {
-    background-color: $bronze;
+    background-color: $tertiary;
     color: $primary;
     width: 175px;
     height: 50px;
@@ -298,20 +298,14 @@ body {
         &:hover,
         &:focus {
             background-color: $secondary;
-            border-color: $bronze;  
+            border-color: $tertiary;  
         }
 }
 
 .alert:focus-within {
     background-color: $secondary;
-    border-color: $bronze;  
+    border-color: $tertiary;  
 }
-
-// .alertReplay:hover,
-// .alertReplay:focus {
-//     background-color: $secondary;
-//     border-color: $bronze;
-// }
 
 .alert {
     background-color: $secondary;
@@ -319,7 +313,7 @@ body {
     width: 50%;
     max-width: 500px;
     padding: 50px 0;
-    border: 10px solid $bronze;
+    border: 10px solid $tertiary;
     border-radius: 10px;
     box-shadow: 8px 8px black;
     position: absolute;
@@ -342,9 +336,10 @@ body {
 
 
 @media (max-width: 960px) {
-.gameTitle {
-    font-size: 5rem;
-}
+    .gameTitle {
+        width: 450px;
+        font-size: 5rem;
+    }
 
     .counterAndRestart {
         flex-direction: row;
@@ -353,11 +348,14 @@ body {
     .movesLeft {
         width: 240px;
         flex-direction: row;
-        height: 100px;
+        align-items: center;
+        max-height: 100px;
         margin: 0 40px 0 0;
             & h2 {
-                margin-bottom: 20px;
                 width: 50%;
+            }
+            & p {
+                line-height: 0;
             }
     }
 
@@ -376,14 +374,13 @@ body {
         margin: 0 auto;
     }
 
-    .piecesBoundary,
-    .createdBy {
+    .piecesBoundary {
         width: 450px;
         margin: 0 auto;
     }
 
     .controls,
-    .gameTitle {
+    .createdBy {
         width: 450px;
     }
 
@@ -393,6 +390,112 @@ body {
 
     .counter {
         margin-bottom: 10px;
+    }
+}
+
+
+@media (max-width: 525px) {
+    .gameTitle {
+        font-size: 4.5rem;
+        width: 80%;
+    }
+
+    .createdBy {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+
+    .puzzleContainer {
+    width: 300px;
+    min-width: 300px;
+    height: 300px;
+    }
+
+    .piecesContainer {
+        width: 300px;
+    }
+
+    .pieceSlot,
+    .handle {
+        flex-basis: 75px;
+        width: 75px;
+        min-width: 75px;
+        height: 75px;
+        min-height: 75px;
+    }
+
+    .jigsaw0 {
+    background-position: 0 0;
+    /* border: 1px solid yellow; */
+    }
+    .jigsaw1 {
+        background-position: -100px 0;
+        /* border: 1px solid yellow; */
+    }
+    .jigsaw2 {
+        background-position: -200px 0;
+        /* border: 1px solid yellow; */
+    }
+    .jigsaw3 {
+        background-position: -300px 0;
+        /* border: 1px solid yellow; */
+    }
+    .jigsaw4 {
+        background-position: 0 -100px;
+        /* border: 2px solid green; */
+    }
+    .jigsaw5 {
+        background-position: -100px -100px;
+        /* border: 2px solid green; */
+    }
+    .jigsaw6 {
+        background-position: -200px -100px;
+        /* border: 2px solid green; */
+    }
+    .jigsaw7 {
+        background-position: -300px -100px;
+        /* border: 2px solid green; */
+    }
+    .jigsaw8 {
+        background-position: 0 -200px;
+        /* border: 2px solid red; */
+    }
+    .jigsaw9 {
+        background-position: -100px -200px;
+        /* border: 2px solid red; */
+    }
+    .jigsaw10 {
+        background-position: -200px -200px;
+        /* border: 2px solid red; */
+    }
+    .jigsaw11 {
+        background-position: -300px -200px;
+        /* border: 2px solid red; */
+    }
+    .jigsaw12 {
+        background-position: 0 -300px;
+        /* border: 2px solid blue; */
+    }
+    .jigsaw13 {
+        background-position: -100px -300px;
+        /* border: 2px solid blue; */
+    }
+    .jigsaw14 {
+        background-position: -200px -300px;
+        /* border: 2px solid blue; */
+    }
+    .jigsaw15 {
+        background-position: -300px -300px;
+        /* border: 2px solid blue; */
+    }
+
+
+}
+
+
+@media (max-width: 420px) {
+    .gameTitle {
+        font-size: 4rem;
     }
 }
 

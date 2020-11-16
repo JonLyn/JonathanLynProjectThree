@@ -248,7 +248,7 @@ button {
 }
 
 .wrapper {
-  width: 100%;
+  width: 90%;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -274,10 +274,11 @@ h3 {
 
 .introTitle {
   color: #fff8f0;
-  width: 100%;
+  width: 80%;
+  max-width: 800px;
   text-align: center;
   font-size: 8rem;
-  border: 10px solid #d58936;
+  border: 10px solid #31afd4;
   border-radius: 20px;
   margin: 30px auto 10px auto;
 }
@@ -285,33 +286,9 @@ h3 {
 .rules {
   width: 80%;
   background-color: #fff8f0;
-  border: 8px solid #d58936;
+  border: 8px solid #31afd4;
   border-radius: 15px;
   margin: 0 auto;
-}
-
-.createdBy {
-  font-size: 1.6rem;
-  color: #fff8f0;
-  text-align: center;
-  margin-bottom: 50px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.createdBy span {
-  font-family: "Montserrat", sans-serif;
-}
-
-.createdBy a {
-  color: inherit;
-}
-
-.createdBy a:hover, .createdBy a:focus {
-  color: #d58936;
-}
-
-.rules {
   padding: 20px 20px 20px 30px;
 }
 
@@ -321,6 +298,27 @@ h3 {
 
 .rules ul li {
   padding: 10px;
+}
+
+.createdBy {
+  width: 80%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  color: #fff8f0;
+  text-align: center;
+  margin: 0 auto 50px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.createdBy a {
+  color: inherit;
+}
+
+.createdBy a:hover, .createdBy a:focus {
+  color: #31afd4;
 }
 
 .startGame {
@@ -335,7 +333,7 @@ h3 {
 }
 
 .startGame a {
-  color: #9e2b25;
+  color: #e84941;
 }
 
 .startText {
@@ -353,7 +351,7 @@ h3 {
   content: '>>';
   position: absolute;
   font-family: #011638;
-  color: #9e2b25;
+  color: #e84941;
   font-size: 8rem;
   right: -115px;
   top: -30px;
@@ -361,14 +359,11 @@ h3 {
 
 @media (max-width: 915px) {
   .introTitle {
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
 }
 
 @media (max-width: 610px) {
-  .innerWrapper {
-    width: 95%;
-  }
   .startText {
     width: 50%;
     font-size: 3.5rem;
@@ -384,6 +379,9 @@ h3 {
   .startText::before {
     top: -15px;
   }
+  .introTitle {
+    font-size: 4rem;
+  }
 }
 
 body {
@@ -395,7 +393,7 @@ body {
   width: 845px;
   text-align: center;
   font-size: 8rem;
-  border: 10px solid #d58936;
+  border: 10px solid #31afd4;
   border-radius: 20px;
   margin: 10px auto 5px auto;
 }
@@ -469,7 +467,7 @@ body {
 .controls::before {
   content: '';
   position: absolute;
-  border: 8px solid #d58936;
+  border: 8px solid #31afd4;
   border-radius: 30px;
   top: -28px;
   right: -28px;
@@ -483,7 +481,7 @@ body {
 
 .almostGameOver {
   font-size: 10rem;
-  color: #9e2b25;
+  color: #e84941;
   -webkit-transform-origin: center;
           transform-origin: center;
   -webkit-animation: pulse .4s infinite ease;
@@ -542,7 +540,7 @@ body {
   right: -28px;
   bottom: -28px;
   left: -28px;
-  border: 8px solid #d58936;
+  border: 8px solid #31afd4;
   border-radius: 23px;
 }
 
@@ -562,16 +560,6 @@ body {
   min-width: 400px;
   height: 400px;
   margin-left: 15px;
-}
-
-.imagePreview {
-  content: '';
-  position: absolute;
-  width: 400px;
-  min-width: 400px;
-  height: 400px;
-  z-index: 100;
-  background-image: url("../assets/toughPuzzleFour.jpg");
 }
 
 .puzzleContainer::before {
@@ -698,7 +686,7 @@ body {
 }
 
 .gameReplay {
-  background-color: #d58936;
+  background-color: #31afd4;
   color: #011638;
   width: 175px;
   height: 50px;
@@ -712,11 +700,11 @@ body {
 
 .gameReplay:hover, .gameReplay:focus {
   background-color: #fff8f0;
-  border-color: #d58936;
+  border-color: #31afd4;
 }
 
 .alertReplay {
-  background-color: #d58936;
+  background-color: #31afd4;
   color: #011638;
   width: 175px;
   height: 50px;
@@ -729,12 +717,12 @@ body {
 
 .alertReplay:hover, .alertReplay:focus {
   background-color: #fff8f0;
-  border-color: #d58936;
+  border-color: #31afd4;
 }
 
 .alert:focus-within {
   background-color: #fff8f0;
-  border-color: #d58936;
+  border-color: #31afd4;
 }
 
 .alert {
@@ -743,7 +731,7 @@ body {
   width: 50%;
   max-width: 500px;
   padding: 50px 0;
-  border: 10px solid #d58936;
+  border: 10px solid #31afd4;
   border-radius: 10px;
   -webkit-box-shadow: 8px 8px black;
           box-shadow: 8px 8px black;
@@ -769,6 +757,7 @@ body {
 
 @media (max-width: 960px) {
   .gameTitle {
+    width: 450px;
     font-size: 5rem;
   }
   .counterAndRestart {
@@ -783,12 +772,17 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    height: 100px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-height: 100px;
     margin: 0 40px 0 0;
   }
   .movesLeft h2 {
-    margin-bottom: 20px;
     width: 50%;
+  }
+  .movesLeft p {
+    line-height: 0;
   }
   .gameReplay {
     margin: 50px 0;
@@ -802,13 +796,12 @@ body {
   .puzzleContainer {
     margin: 0 auto;
   }
-  .piecesBoundary,
-  .createdBy {
+  .piecesBoundary {
     width: 450px;
     margin: 0 auto;
   }
   .controls,
-  .gameTitle {
+  .createdBy {
     width: 450px;
   }
   .createdBy {
@@ -816,5 +809,103 @@ body {
   }
   .counter {
     margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 525px) {
+  .gameTitle {
+    font-size: 4.5rem;
+    width: 80%;
+  }
+  .createdBy {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+  .puzzleContainer {
+    width: 300px;
+    min-width: 300px;
+    height: 300px;
+  }
+  .piecesContainer {
+    width: 300px;
+  }
+  .pieceSlot,
+  .handle {
+    -ms-flex-preferred-size: 75px;
+        flex-basis: 75px;
+    width: 75px;
+    min-width: 75px;
+    height: 75px;
+    min-height: 75px;
+  }
+  .jigsaw0 {
+    background-position: 0 0;
+    /* border: 1px solid yellow; */
+  }
+  .jigsaw1 {
+    background-position: -100px 0;
+    /* border: 1px solid yellow; */
+  }
+  .jigsaw2 {
+    background-position: -200px 0;
+    /* border: 1px solid yellow; */
+  }
+  .jigsaw3 {
+    background-position: -300px 0;
+    /* border: 1px solid yellow; */
+  }
+  .jigsaw4 {
+    background-position: 0 -100px;
+    /* border: 2px solid green; */
+  }
+  .jigsaw5 {
+    background-position: -100px -100px;
+    /* border: 2px solid green; */
+  }
+  .jigsaw6 {
+    background-position: -200px -100px;
+    /* border: 2px solid green; */
+  }
+  .jigsaw7 {
+    background-position: -300px -100px;
+    /* border: 2px solid green; */
+  }
+  .jigsaw8 {
+    background-position: 0 -200px;
+    /* border: 2px solid red; */
+  }
+  .jigsaw9 {
+    background-position: -100px -200px;
+    /* border: 2px solid red; */
+  }
+  .jigsaw10 {
+    background-position: -200px -200px;
+    /* border: 2px solid red; */
+  }
+  .jigsaw11 {
+    background-position: -300px -200px;
+    /* border: 2px solid red; */
+  }
+  .jigsaw12 {
+    background-position: 0 -300px;
+    /* border: 2px solid blue; */
+  }
+  .jigsaw13 {
+    background-position: -100px -300px;
+    /* border: 2px solid blue; */
+  }
+  .jigsaw14 {
+    background-position: -200px -300px;
+    /* border: 2px solid blue; */
+  }
+  .jigsaw15 {
+    background-position: -300px -300px;
+    /* border: 2px solid blue; */
+  }
+}
+
+@media (max-width: 420px) {
+  .gameTitle {
+    font-size: 4rem;
   }
 }
