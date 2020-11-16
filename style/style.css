@@ -665,6 +665,10 @@ html {
   background-position: -200px -300px;
 }
 
+.jigsaw15 {
+  background-position: -300px -300px;
+}
+
 .zIndexLower {
   z-index: 20;
 }
@@ -885,6 +889,9 @@ html {
   }
   .jigsaw14 {
     background-position: -175px -275px;
+  }
+  .jigsaw15 {
+    background-position: -275px -275px;
   }
   .controls {
     max-width: 340px;
