@@ -1,10 +1,4 @@
-
-
-body {
-    background-color: $primary;
-}
-
-
+// Impuzzible title
 .gameTitle {
     color: $secondary;
     width: 845px;
@@ -15,18 +9,21 @@ body {
     margin: 10px auto 5px auto;
 }
 
+// Counter and puzzle sections container div
 .puzzleAndCounter {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+// Counter and restart button container div
 .counterAndRestart {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+// Counter, control instructions and puzzle piece constraint boundary
 .movesLeft,
 .piecesBoundary,
 .controls {
@@ -39,6 +36,7 @@ body {
     flex-wrap: wrap;
 }
 
+// Counter
 .movesLeft {
     display: flex;
     flex-wrap: wrap;
@@ -51,10 +49,13 @@ body {
     justify-content: space-between;
 }
 
+// 'Moves left' text
 .movesLeft h2 {
     font-family: $secondaryFont;
 }
 
+// Tertiary color border for counter, playable area and control instructions
+.piecesBoundary::before,
 .movesLeft::before,
 .controls::before {
     content: '';
@@ -67,14 +68,39 @@ body {
     left: -28px;
 }
 
+// Counter number text
 .counter {
     font-size: 8rem;
 }
 
-// .noMovesLeft {
-    //     font-size: 5rem;
-    // }
-    
+// Control instructions
+.controls {
+    width: 845px;
+    margin-top: 20px;
+    font-family: $secondaryFont;
+    align-content: right;
+        & ul {
+        display: flex;
+        justify-content: space-between;
+            & li {
+                margin: 10px;
+            }
+        }
+}
+
+// Control instructions title
+.controlsTitle {
+    list-style: none;
+        & h3 {
+            text-transform: uppercase;
+            font-weight: 800;    
+        }
+        & ul {
+                    padding-left: 10px;
+                }
+}
+
+// Change counter number colour and add pulse animation
 .almostGameOver {
     font-size: 10rem;
     color: $accent;
@@ -94,6 +120,7 @@ body {
     }
 }
 
+// Add border to piece when correctly placed
 .correctNotification {
     border: 1px solid $secondary;
     display: inline-block;
@@ -101,46 +128,7 @@ body {
     height: 100px;
 }
 
-.controls {
-    width: 845px;
-    margin-top: 20px;
-    font-family: $secondaryFont;
-    align-content: right;
-}
-
-.controls ul {
-        display: flex;
-        justify-content: space-between;
-}
-
-.controls li {
-    margin: 10px;
-}
-
-
-.controlsTitle {
-    list-style: none;
-        & h3 {
-            text-transform: uppercase;
-            font-weight: 800;    
-        }
-        & ul {
-                    padding-left: 10px;
-                }
-}
-
-
-.piecesBoundary::before {
-    content: '';
-    position: absolute;
-    top: -28px;
-    right: -28px;
-    bottom: -28px;
-    left: -28px;
-    border: 8px solid $tertiary;
-    border-radius: 23px;
-}
-
+// Piece starting area and puzzle slots container
 .piecesContainer,
 .puzzleContainer {
     background-color: #08415C;
@@ -148,7 +136,7 @@ body {
     flex-wrap: wrap;
     position: relative;
 }
-
+// Puzzle slots container
 .puzzleContainer {
     width: 400px;
     min-width: 400px;
@@ -156,11 +144,7 @@ body {
     margin-left: 15px;
 }
 
-.puzzleContainer::before {
-    content: '',
-
-}
-
+// Piece starting area
 .piecesContainer {
     width: 170px;
     min-width: 150px;
@@ -169,6 +153,7 @@ body {
     border-radius: 12px;;
 }
 
+// Individual piece slot
 .pieceSlot {
     flex-basis: 100px;
     min-width: 100px;
@@ -176,6 +161,7 @@ body {
     border: 1px solid black;
 }
 
+// Puzzle piece <a> tag
 .handle {
     width: 100px;
     min-width: 100px;
@@ -188,83 +174,70 @@ body {
         }
 }
 
-
+// Random image for puzzle pieces
 .piece {
     position: absolute;
-    background-image: url('../assets/toughPuzzleFour.jpg');
+    background-image: url('http://lorempixel.com/400/400/cats');
     background-repeat: no-repeat;
     z-index: 50;   
 }
 
+// Adjusting the positioning of the image for each puzzle piece
 .jigsaw0 {
     background-position: 0 0;
-    /* border: 1px solid yellow; */
 }
 .jigsaw1 {
-    background-position: -100px 0;
-    /* border: 1px solid yellow; */
+    background-position: -100px 0; 
 }
 .jigsaw2 {
-    background-position: -200px 0;
-    /* border: 1px solid yellow; */
+    background-position: -200px 0; 
 }
 .jigsaw3 {
-    background-position: -300px 0;
-    /* border: 1px solid yellow; */
+    background-position: -300px 0; 
 }
 .jigsaw4 {
     background-position: 0 -100px;
-    /* border: 2px solid green; */
 }
 .jigsaw5 {
     background-position: -100px -100px;
-    /* border: 2px solid green; */
 }
 .jigsaw6 {
     background-position: -200px -100px;
-    /* border: 2px solid green; */
 }
 .jigsaw7 {
     background-position: -300px -100px;
-    /* border: 2px solid green; */
 }
 .jigsaw8 {
-    background-position: 0 -200px;
-    /* border: 2px solid red; */
+    background-position: 0 -200px
 }
 .jigsaw9 {
-    background-position: -100px -200px;
-    /* border: 2px solid red; */
+    background-position: -100px -200px
 }
 .jigsaw10 {
-    background-position: -200px -200px;
-    /* border: 2px solid red; */
+    background-position: -200px -200px
 }
 .jigsaw11 {
-    background-position: -300px -200px;
-    /* border: 2px solid red; */
+    background-position: -300px -200px
 }
 .jigsaw12 {
     background-position: 0 -300px;
-    /* border: 2px solid blue; */
 }
 .jigsaw13 {
     background-position: -100px -300px;
-    /* border: 2px solid blue; */
 }
 .jigsaw14 {
     background-position: -200px -300px;
-    /* border: 2px solid blue; */
 }
 .jigsaw15 {
     background-position: -300px -300px;
-    /* border: 2px solid blue; */
 }
 
+// Lower z-index of correctly placed piece
 .zIndexLower {
     z-index: 20;
 }
 
+// Restart game button
 .gameReplay {
     background-color: $tertiary;
     color: $primary;
@@ -283,7 +256,7 @@ body {
         }
 }
 
-
+// 'Play again' button
 .alertReplay {
     background-color: $tertiary;
     color: $primary;
@@ -294,7 +267,6 @@ body {
     font-weight: 800;
     border-radius: 10px;
     border: 3px solid $secondary;     
-    // display: inline-block;
         &:hover,
         &:focus {
             background-color: $secondary;
@@ -302,11 +274,7 @@ body {
         }
 }
 
-.alert:focus-within {
-    background-color: $secondary;
-    border-color: $tertiary;  
-}
-
+// Pop-up message when player wins or loses
 .alert {
     background-color: $secondary;
     text-align: center;
@@ -326,25 +294,25 @@ body {
         }
 }
 
+// Toggle pop-up message visibility
 .show {
     display: none;
 }
 
-.hide {
-    opacity: 1;
-}
-
-
+// First media query
 @media (max-width: 960px) {
+    // Reduce 'Impuzzible' title text
     .gameTitle {
         width: 450px;
         font-size: 5rem;
     }
 
+    // Change counter and restart button layout to row
     .counterAndRestart {
         flex-direction: row;
     }
 
+    // Change 'Moves left' and counter number layout to row and adjust sizing
     .movesLeft {
         width: 240px;
         flex-direction: row;
@@ -359,10 +327,12 @@ body {
             }
     }
 
+    // Adjust margin on restart button
     .gameReplay {
         margin: 50px 0;
     }
 
+    // Adjust sizing on the pieces starting area
     .piecesContainer {
         width: 400px;
         height: 170px;
@@ -370,34 +340,42 @@ body {
         margin: 0 auto 15px;
     }
 
+    // Center play area
     .puzzleContainer {
         margin: 0 auto;
     }
 
+    // Adjust size of the piece constraint div
     .piecesBoundary {
         width: 450px;
         margin: 0 auto;
     }
 
+    // Adjust width of personal page/Juno link and control instructions
     .controls,
     .createdBy {
         width: 450px;
     }
 
+    // Adjust bottom margin of personal page/Juno link
     .createdBy {
         margin-bottom: 15px;
     }
 
+    // Adjust bottom margin of counter number text
     .counter {
         margin-bottom: 10px;
     }
 }
 
-
+// Second media query
 @media (max-width: 525px) {
+    // Reduce wrapper width
     .wrapper {
         width:340px;
     }
+
+    // Reduce  
     .gameTitle {
         font-size: 4.5rem;
         width: 340px;

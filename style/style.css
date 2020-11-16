@@ -253,25 +253,6 @@ button {
   margin: 0 auto;
 }
 
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: "Permanent Marker", cursive;
-  font-size: 1.6rem;
-}
-
-h2 {
-  color: #011638;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-h3 {
-  font-weight: 400;
-}
-
 .introTitle {
   color: #fff8f0;
   width: 80%;
@@ -396,10 +377,6 @@ h3 {
   }
 }
 
-body {
-  background-color: #011638;
-}
-
 .gameTitle {
   color: #fff8f0;
   width: 845px;
@@ -475,6 +452,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.piecesBoundary::before,
 .movesLeft::before,
 .controls::before {
   content: '';
@@ -489,6 +467,40 @@ body {
 
 .counter {
   font-size: 8rem;
+}
+
+.controls {
+  width: 845px;
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  -ms-flex-line-pack: right;
+      align-content: right;
+}
+
+.controls ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.controls ul li {
+  margin: 10px;
+}
+
+.controlsTitle {
+  list-style: none;
+}
+
+.controlsTitle h3 {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.controlsTitle ul {
+  padding-left: 10px;
 }
 
 .almostGameOver {
@@ -531,51 +543,6 @@ body {
   height: 100px;
 }
 
-.controls {
-  width: 845px;
-  margin-top: 20px;
-  font-family: "Montserrat", sans-serif;
-  -ms-flex-line-pack: right;
-      align-content: right;
-}
-
-.controls ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.controls li {
-  margin: 10px;
-}
-
-.controlsTitle {
-  list-style: none;
-}
-
-.controlsTitle h3 {
-  text-transform: uppercase;
-  font-weight: 800;
-}
-
-.controlsTitle ul {
-  padding-left: 10px;
-}
-
-.piecesBoundary::before {
-  content: '';
-  position: absolute;
-  top: -28px;
-  right: -28px;
-  bottom: -28px;
-  left: -28px;
-  border: 8px solid #31afd4;
-  border-radius: 23px;
-}
-
 .piecesContainer,
 .puzzleContainer {
   background-color: #08415C;
@@ -592,10 +559,6 @@ body {
   min-width: 400px;
   height: 400px;
   margin-left: 15px;
-}
-
-.puzzleContainer::before {
-  content: "";
 }
 
 .piecesContainer {
@@ -628,89 +591,73 @@ body {
 
 .piece {
   position: absolute;
-  background-image: url("../assets/toughPuzzleFour.jpg");
+  background-image: url("http://lorempixel.com/400/400/cats");
   background-repeat: no-repeat;
   z-index: 50;
 }
 
 .jigsaw0 {
   background-position: 0 0;
-  /* border: 1px solid yellow; */
 }
 
 .jigsaw1 {
   background-position: -100px 0;
-  /* border: 1px solid yellow; */
 }
 
 .jigsaw2 {
   background-position: -200px 0;
-  /* border: 1px solid yellow; */
 }
 
 .jigsaw3 {
   background-position: -300px 0;
-  /* border: 1px solid yellow; */
 }
 
 .jigsaw4 {
   background-position: 0 -100px;
-  /* border: 2px solid green; */
 }
 
 .jigsaw5 {
   background-position: -100px -100px;
-  /* border: 2px solid green; */
 }
 
 .jigsaw6 {
   background-position: -200px -100px;
-  /* border: 2px solid green; */
 }
 
 .jigsaw7 {
   background-position: -300px -100px;
-  /* border: 2px solid green; */
 }
 
 .jigsaw8 {
   background-position: 0 -200px;
-  /* border: 2px solid red; */
 }
 
 .jigsaw9 {
   background-position: -100px -200px;
-  /* border: 2px solid red; */
 }
 
 .jigsaw10 {
   background-position: -200px -200px;
-  /* border: 2px solid red; */
 }
 
 .jigsaw11 {
   background-position: -300px -200px;
-  /* border: 2px solid red; */
 }
 
 .jigsaw12 {
   background-position: 0 -300px;
-  /* border: 2px solid blue; */
 }
 
 .jigsaw13 {
   background-position: -100px -300px;
-  /* border: 2px solid blue; */
 }
 
 .jigsaw14 {
   background-position: -200px -300px;
-  /* border: 2px solid blue; */
 }
 
 .jigsaw15 {
   background-position: -300px -300px;
-  /* border: 2px solid blue; */
 }
 
 .zIndexLower {
@@ -752,11 +699,6 @@ body {
   border-color: #31afd4;
 }
 
-.alert:focus-within {
-  background-color: #fff8f0;
-  border-color: #31afd4;
-}
-
 .alert {
   background-color: #fff8f0;
   text-align: center;
@@ -781,10 +723,6 @@ body {
 
 .show {
   display: none;
-}
-
-.hide {
-  opacity: 1;
 }
 
 @media (max-width: 960px) {
@@ -981,4 +919,27 @@ body {
   .gameTitle {
     font-size: 4rem;
   }
+}
+
+body {
+  background-color: #011638;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.6rem;
+}
+
+h2 {
+  color: #011638;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-weight: 400;
 }
