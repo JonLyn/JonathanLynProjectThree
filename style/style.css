@@ -520,6 +520,19 @@ body {
       align-content: right;
 }
 
+.controls ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.controls li {
+  margin: 10px;
+}
+
 .controlsTitle {
   list-style: none;
 }
@@ -815,11 +828,25 @@ body {
 @media (max-width: 525px) {
   .gameTitle {
     font-size: 4.5rem;
-    width: 80%;
+    width: 350px;
   }
   .createdBy {
     width: 80%;
     margin-bottom: 15px;
+  }
+  .counterAndRestart {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .movesLeft,
+  .gameReplay {
+    margin: 10px auto;
+    width: 350px;
+  }
+  .movesLeft {
+    margin-bottom: 30px;
   }
   .puzzleContainer {
     width: 300px;
@@ -828,6 +855,9 @@ body {
   }
   .piecesContainer {
     width: 300px;
+  }
+  .piecesBoundary {
+    width: 350px;
   }
   .pieceSlot,
   .handle {
@@ -843,64 +873,73 @@ body {
     /* border: 1px solid yellow; */
   }
   .jigsaw1 {
-    background-position: -100px 0;
+    background-position: -75px 0;
     /* border: 1px solid yellow; */
   }
   .jigsaw2 {
-    background-position: -200px 0;
+    background-position: -175px 0;
     /* border: 1px solid yellow; */
   }
   .jigsaw3 {
-    background-position: -300px 0;
+    background-position: -275px 0;
     /* border: 1px solid yellow; */
   }
   .jigsaw4 {
-    background-position: 0 -100px;
+    background-position: 0 -75px;
     /* border: 2px solid green; */
   }
   .jigsaw5 {
-    background-position: -100px -100px;
+    background-position: -75px -75px;
     /* border: 2px solid green; */
   }
   .jigsaw6 {
-    background-position: -200px -100px;
+    background-position: -175px -75px;
     /* border: 2px solid green; */
   }
   .jigsaw7 {
-    background-position: -300px -100px;
+    background-position: -275px -75px;
     /* border: 2px solid green; */
   }
   .jigsaw8 {
-    background-position: 0 -200px;
+    background-position: 0 -175px;
     /* border: 2px solid red; */
   }
   .jigsaw9 {
-    background-position: -100px -200px;
+    background-position: -75px -175px;
     /* border: 2px solid red; */
   }
   .jigsaw10 {
-    background-position: -200px -200px;
+    background-position: -175px -175px;
     /* border: 2px solid red; */
   }
   .jigsaw11 {
-    background-position: -300px -200px;
+    background-position: -275px -175px;
     /* border: 2px solid red; */
   }
   .jigsaw12 {
-    background-position: 0 -300px;
+    background-position: 0 -275px;
     /* border: 2px solid blue; */
   }
   .jigsaw13 {
-    background-position: -100px -300px;
+    background-position: -75px -275px;
     /* border: 2px solid blue; */
   }
   .jigsaw14 {
-    background-position: -200px -300px;
+    background-position: -175px -275px;
     /* border: 2px solid blue; */
   }
   .jigsaw15 {
-    background-position: -300px -300px;
+    background-position: -275px -275px;
     /* border: 2px solid blue; */
+  }
+  .controls {
+    width: 350px;
+  }
+  .controls ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 

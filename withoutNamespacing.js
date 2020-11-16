@@ -64,7 +64,7 @@ $(function () {
     }
 
     // Create difficulty level
-    const moves = 6;
+    const moves = 50;
     // Create counter variable and function to keep track of the number to total moves remaining
     let movesRemainCount = moves;
 
@@ -124,6 +124,14 @@ $(function () {
                     'left': `${randomX}px`,
                     'top': `${randomY}px`,
                 })
+            } else if ($(window).width() < 525) {
+                const randomX = (Math.floor(Math.random() * 200) + 15);
+                const randomY = (Math.floor(Math.random() * 75) + 10);
+                $(eachPiece).css({
+                    'left': `${randomX}px`,
+                    'top': `${randomY}px`,
+                })
+                
             } else {
                 const randomX = (Math.floor(Math.random() * 275) + 15);
                 const randomY = (Math.floor(Math.random() * 50) + 10);
