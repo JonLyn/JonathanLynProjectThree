@@ -7,39 +7,42 @@
     <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Permanent+Marker&display=swap'
         rel='stylesheet'>
     <link rel='stylesheet' href='./style/style.css'>
-
     <title>Impuzzible Jigsaw Puzzle Gameplay Page</title>
 </head>
     
 <body>
     <header class='wrapper'> 
+        <!-- Title -->
         <h1 class='gameTitle'>Impuzzible</h1>
+        <!-- Link to personal site and Juno College -->
             <div class='createdBy'>
                 <h3><span>Created by </span><a href='https://www.joncraftscode.com/'>jonCraftsCode</a><span> at </span><a href='https://junocollege.com/'>Juno College</a></h3>
             </div>
-            <div class='alert show'>
-                <h2>You win!</h2>
-                <button class='alertReplay'>Play again</button>
-            </div>
+            
     </header>
     <main>
+        <!-- Pop-up message to alert player if they have won or lost -->
+        <div class='alert show'>
+            <h2>You win!</h2>
+            <button class='alertReplay'>Play again</button>
+        </div>
+        <!-- Counter to show moves left and button to restart game -->
         <div class='wrapper puzzleAndCounter'>
             <div class='counterAndRestart'>
                 <div class='movesLeft'>
                     <h2>Moves left</h2>
                     <p class='counter'>0</p>
                 </div>
-                <button class='gameReplay'>Start / Restart</button>
-                
+                <button class='gameReplay'>Restart</button>
             </div>
-            
+            <!-- Empty divs to be populated with puzzle pieces and accompanying slot through JS -->
             <div class='piecesBoundary'>
                 <div class='piecesContainer'>
                 </div>
                 <div class='puzzleContainer'>
                 </div>
             </div>
-                
+            <!-- Instructions on how to use mouse, keyboard or mobile -->
             <div class='controls'>
                 <ul>
                     <li class='controlsTitle'>
@@ -54,18 +57,11 @@
                 </ul>
             </div>
         </div>
-        
-        </div>
-        
-
-
     </main>
+    <!-- Links to JS files -->
     <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
     <script src='https://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
     <script src='jquery.ui.touch-punch.min.js'></script>
+    <script src='./withoutNamespacing.js'></script>
 </body>
-
-<script src='./withoutNamespacing.js'>
-    
-</script>
 </html>

@@ -1,5 +1,4 @@
-
-
+// Impuzzible title 
 .introTitle {
     color: $secondary;
     width: 80%;
@@ -11,6 +10,7 @@
     margin: 30px auto 10px auto;
 }
 
+// Rules and how to play section
 .rules {
     width: 80%;
     background-color: $secondary;
@@ -36,6 +36,7 @@
         }
 }
 
+// Link to personal site and Juno College
 .createdBy {
     width: 80%;
     font-family: $secondaryFont;
@@ -47,9 +48,6 @@
     text-transform: uppercase;
     word-wrap: break-word;
     white-space: normal;
-        // span {
-        //     font-family: $secondaryFont;
-        // }
         a {
             color: $accent;
                 &:hover,
@@ -59,16 +57,18 @@
         }
 }
 
+// Link to game page
 .startGame {
     display: flex;
     justify-content: center;
     text-transform: none;
     font-family: $primary;
     a {
-        color: $accent; //need to change colour - not AAA
+        color: $accent; 
     }
 }
 
+// 'Start game' text
 .startText {
     font-size: 4rem;
     margin: 30px 20px 0 10px;
@@ -80,6 +80,7 @@
     }
 }
 
+// Double arrows psuedo element on the 'Start game' link
 .startText::before {
     content: '>>';
     position: absolute;
@@ -91,14 +92,17 @@
 
 }
 
-
+// First media query
 @media (max-width: 915px) {
+    // Reduce 'Impuzzible' title font
     .introTitle {
         font-size: 4.5rem;
     }
 }
 
+// Second media query
 @media (max-width: 610px) {
+    // Reduce the font and size of 'Game start' link
     .startText {
         width: 50%;
         font-size: 3.5rem;
@@ -106,18 +110,17 @@
         margin-top: 15px;
             &::before {
                 top: -33px;
-                
             }
     }
 }
 
-
-
-@media (max-width: 400px) {        
+// Third media query
+@media (max-width: 400px) { 
+    // Adjust positioning of double arrows on 'Start game' link       
     .startText::before {
         top: -15px;
     }
-
+    // Reduce 'Impuzzible' title font
     .introTitle {
         font-size: 4rem;
     }
