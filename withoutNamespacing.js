@@ -1,22 +1,22 @@
-// ***** Clean code - put functions in variables and have each function only serve 1 main purpose
-
 // Impuzzible
-// A landing page introducing the game and rules
-// Point users to click link to go to game page
+
+// Document ready
 $(function () {
+
+    // Create puzzle pieces as <div>s in HTML
     for (let i = 0; i < 16; i++) {
         $('.piecesContainer').append(`<div class='correctNotification piece jigsaw${i}'>
     <a href='' class='handle '></a></div>`);
     }
+
     // Create piece slots as <div>s in HTML
     for (let i = 0; i < 16; i++) {
         $('.puzzleContainer').append(`<div class='pieceSlot slot${i}'></div>`);
     }
 
-        // Insert puzzle pieces into an array to assign index numbers to each piece
+    // Insert puzzle pieces into an array to assign index numbers to each piece
     const $piece = $('.piece');
     const piecesArray = Array.from($piece);
-    // console.log(piecesArray);
 
     // Insert piece slots into an array to assign index numbers to each slot
     const $slot = $('.pieceSlot')
@@ -35,10 +35,10 @@ $(function () {
         containment: '.piecesBoundary'
     });
 
-    // Apply droppable state to total playing are to track each player move and add 1 total move to move counter 
+    // Apply droppable state to total playing are to track each player move and add 1 move to move counter 
     const totalDroppableArea = () => {
         $('.puzzleContainer').droppable({
-            accept: $('.piece'),
+            accept: $piece,
             drop: function (event, ui) {
                 movesRemainCount--;
                 // Display total moves counter on screen
@@ -63,8 +63,8 @@ $(function () {
         $('.counter').removeClass('almostGameOver');
     }
 
-    // Create difficulty level
-    const moves = 10;
+    
+    const moves = 50;
     // Create counter variable and function to keep track of the number to total moves remaining
     let movesRemainCount = moves;
 
