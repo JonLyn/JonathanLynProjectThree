@@ -638,7 +638,7 @@ html {
 }
 
 .jigsaw8 {
-  -position: 0 -200px;
+  background-position: 0 -200px;
 }
 
 .jigsaw9 {
@@ -870,7 +870,7 @@ html {
     background-position: -275px -75px;
   }
   .jigsaw8 {
-    -position: 0 -175px;
+    background-position: 0 -175px;
   }
   .jigsaw9 {
     background-position: -75px -175px;
