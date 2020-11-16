@@ -24,6 +24,16 @@
                     padding: 10px;
                 }
         }
+        & h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        & h3 {
+            font-family: $secondaryFont;
+            text-transform: uppercase;
+            font-weight: 800;
+            text-align: center;
+        }
 }
 
 .createdBy {
@@ -41,7 +51,7 @@
         //     font-family: $secondaryFont;
         // }
         a {
-            color: inherit;
+            color: $accent;
                 &:hover,
                 &:focus {
                     color: $tertiary;

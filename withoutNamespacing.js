@@ -6,7 +6,7 @@ $(function () {
     // Create puzzle pieces as <div>s in HTML
     for (let i = 0; i < 16; i++) {
         $('.piecesContainer').append(`<div class='correctNotification piece jigsaw${i}'>
-    <a href='' class='handle '></a></div>`);
+    <a href='' class='handle' aria-label='puzzle piece'></a></div>`);
     }
 
     // Create piece slots as <div>s in HTML
@@ -59,43 +59,32 @@ $(function () {
         }
     }
 
-    const removeCounterPulse = () => {
-        $('.counter').removeClass('almostGameOver');
-    }
-
-    
+    // Variable to store the number of moves allowed
     const moves = 50;
+    
     // Create counter variable and function to keep track of the number to total moves remaining
     let movesRemainCount = moves;
 
     const movesRemainCounterFunk = () => {
+        // Check to see if only 5 moves left to change move counter styling
         if (movesRemainCount <= 5 && movesRemainCount > 0) {
             $('.counter').addClass('almostGameOver');
         } else if (movesRemainCount === 0) {
-            // Decrease counter font and show no moves left
-            $('.counter').toggleClass('noMovesLeft');
-            removeCounterPulse();
-            // $('.counter').html('No moves left');
             // Notify player game is over if they have reached total moves allowed
-            // alert('you lose!');
-            // Notify player they have won if they have placed all pieces successfully
             $('.alert h2').text('Game over!');
             $('.alert').toggleClass('show');
-            
-            $('.counter').toggleClass('noMovesLeft');
             // reshuffle pieces using shuffle function
             shufflePieces();
-            // Reset move counter and display on screen
+            // Reset move counter 
             movesRemainCount = moves;
             $('.counter').html(movesRemainCount);
         }
     }
 
-    // const pressureCounter = () => {
-    //     if (movesRemainCount <= 15 && movesRemainCount > 0) {
-    //         $('.counter').addClass('almostGameOver');
-    //     }
-    // }
+    // Function to remove the pulsing font when moves are almost done
+    const removeCounterPulse = () => {
+        $('.counter').removeClass('almostGameOver');
+    }
 
     // Create counter variable and function to keep track of the number of correctly placed pieces 
     let correctCount = 0;
@@ -124,6 +113,7 @@ $(function () {
                     'left': `${randomX}px`,
                     'top': `${randomY}px`,
                 })
+            // Adjusting start positioning to match changes in responsive piece container 
             } else if ($(window).width() < 525) {
                 const randomX = (Math.floor(Math.random() * 200) + 15);
                 const randomY = (Math.floor(Math.random() * 75) + 10);
@@ -141,32 +131,35 @@ $(function () {
                 })
             }
 
-            
+            // Re-enable draggable state and remove border around correctly laid pieces
             $(eachPiece).draggable('enable').removeClass('correctNotification');
         })
+
+        // Remove stuck focus state  
         $('button').mouseup(function () {
             this.blur()
         })
 
+        // Remove pulse from counter and reset the number of correctly laid pieces to 0
         removeCounterPulse();
         movesRemainCount = moves;
         $('.counter').html(moves);
         correctCount = 0;
     }
 
+    // Function to run when a correct piece is laid
     const correctDropEvent = (correctPiece) => {
         $(slotArray[correctPiece]).on('drop', function (event, ui) {
-            console.log('correct');
             // Disable dragging the puzzle piece once it has been dropped on the correct slot and lower z-index in case another piece is placed on top
             $(piecesArray[correctPiece]).draggable('disable').addClass('zIndexLower').addClass('correctNotification');
             // Increase correct move counter by 1
             correctCount++;
-            console.log(correctCount);
             // Call correct move count checker function to see if all pieces have been correctly placed
             correctCountFunk();
         })
     }
 
+    // Keyboard control functionality
     const keyboardPress = () => {
         for (let i = 0; i < 16; i++) {
             $(piecesArray[i]).on('keydown', (e) => {
@@ -174,50 +167,32 @@ $(function () {
                 let position = '';
                 const draggable = $(piecesArray[i]),
                     container = $('.piecesBoundary'),
-                    distance = 3; // Distance in pixels the draggable should be moved
-
+                    distance = 3; 
                 position = draggable.position();
                 console.log('piece was selected with the key');
 
                 // Reposition if one of the directional keys is pressed
                 switch (e.keyCode) {
+                    // Allows player to tab through pieces
                     case 9:
-                        // draggable.toggleClass('box');
                         let next = $(piecesArray[i++]);
                         if (next > piecesArray.length) {
                             next = 0;
                         }
                         $(piecesArray[next]);
                         break;
+                    // Allows player to select previous piece
                     case 66:
-                        // draggable.toggleClass('box');
                         let back = $(piecesArray[i--]);
                         if (back > piecesArray.length) {
                             back = 0;
                         }
                         $(piecesArray[back]);
                         break;
-                    case 37:
-
-                        //     ({
-                        //     border: '3px solid red'
-                        // });
-                        position.left -= distance; break; // Left
-                    case 38:
-                        // draggable.css({
-                        //     border: '3px solid red'
-                        // });
-                        position.top -= distance; break; // Up
-                    case 39:
-                        // draggable.css({
-                        //     border: '3px solid red'
-                        // });
-                        position.left += distance; break; // Right
-                    case 40:
-                        // draggable.css({
-                        //     border: '3px solid red'
-                        // });
-                        position.top += distance; break; // Down
+                    case 37: position.left -= distance; break; // Left
+                    case 38: position.top -= distance; break; // Up
+                    case 39: position.left += distance; break; // Right
+                    case 40: position.top += distance; break; // Down
                     default: return true; // Exit and bubble
                 }
 
@@ -231,17 +206,14 @@ $(function () {
         }
     }
 
-
-    // Display total move counter on screen
-    const renderedCount = $('.counter').html(`${movesRemainCount}`);
-
-    // 'Reset' button to reshuffle pieces and start puzzle over again
+    // 'Reset' button functionality to reshuffle pieces and start puzzle over again
     const reShuffleButton = () => {
         $('.gameReplay').on('click', function () {
             shufflePieces();
         })
     }
 
+    // Replay button shown on win or lose alert
     const replayButton = () => {
         $('.alertReplay').on('click', function () {
             $('.alert').toggleClass('show');
@@ -249,7 +221,7 @@ $(function () {
         })
     }
 
-
+    // Calling functions
     shufflePieces();
     totalDroppableArea();
     assignDroppableSlot();

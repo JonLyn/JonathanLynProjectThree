@@ -156,16 +156,6 @@ body {
     margin-left: 15px;
 }
 
-// .imagePreview {
-//             content: '';
-//             position: absolute;
-//             width: 400px;
-//             min-width: 400px;
-//             height: 400px;
-//             z-index: 100;
-//             background-image: url("../assets/toughPuzzleFour.jpg");
-//         }
-
 .puzzleContainer::before {
     content: '',
 
@@ -194,14 +184,14 @@ body {
     display: block; 
         &:hover,
         &:focus {
-            border: 2px solid $hover;
+            border: 2px solid $accent;
         }
 }
 
 
 .piece {
     position: absolute;
-    background-image: url("../assets/toughPuzzleFour.jpg");
+    background-image: url('../assets/toughPuzzleFour.jpg');
     background-repeat: no-repeat;
     z-index: 50;   
 }
@@ -549,9 +539,6 @@ body {
     }
 }
 
-
-@media (hover: hover) {
-}
 
 
 
