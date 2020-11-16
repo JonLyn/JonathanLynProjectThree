@@ -6,7 +6,7 @@ $(function () {
     // Create puzzle pieces as <div>s in HTML
     for (let i = 0; i < 16; i++) {
         $('.piecesContainer').append(`<div class='correctNotification piece jigsaw${i}'>
-    <a href='' class='handle' aria-label='puzzle piece'></a></div>`);
+    <a href='' class='handle' aria-label='puzzle piece.  Image from www.lorempixel.com'></a></div>`);
     }
 
     // Create piece slots as <div>s in HTML
@@ -35,7 +35,7 @@ $(function () {
         containment: '.piecesBoundary'
     });
 
-    // Apply droppable state to total playing are to track each player move and add 1 move to move counter 
+    // Apply droppable state to total playing are to track each player move and add 1 move to move counter (unable to get counter to reduce when work with keyboard functionality)
     const totalDroppableArea = () => {
         $('.puzzleContainer').droppable({
             accept: $piece,
@@ -132,7 +132,7 @@ $(function () {
             }
 
             // Re-enable draggable state and remove border around correctly laid pieces
-            $(eachPiece).draggable('enable').removeClass('correctNotification');
+            $(eachPiece).draggable('enable').removeClass('correctNotification keyBorder');
         })
 
         // Remove stuck focus state  
@@ -169,7 +169,8 @@ $(function () {
                     container = $('.piecesBoundary'),
                     distance = 3; 
                 position = draggable.position();
-                console.log('piece was selected with the key');
+                // Add border to piece being moved (was unable to remove border after keypress)
+                draggable.addClass('keyBorder');
 
                 // Reposition if one of the directional keys is pressed
                 switch (e.keyCode) {
@@ -189,11 +190,18 @@ $(function () {
                         }
                         $(piecesArray[back]);
                         break;
-                    case 37: position.left -= distance; break; // Left
-                    case 38: position.top -= distance; break; // Up
-                    case 39: position.left += distance; break; // Right
-                    case 40: position.top += distance; break; // Down
-                    default: return true; // Exit and loop
+                    // Move left
+                    case 37: position.left -= distance; break; 
+                    // Move up
+                    case 38: position.top -= distance; break; 
+                    // Move right
+                    case 39: position.left += distance; break;
+                    // Move down 
+                    case 40: position.top += distance; break;
+                    // Restart
+                    case 82: shufflePieces(); 
+                    // Exit and loop
+                    default: return true; 
                 }
 
                 // Keep draggable within container

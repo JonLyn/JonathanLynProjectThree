@@ -601,6 +601,10 @@ html {
   z-index: 50;
 }
 
+.keyBorder {
+  border: 2px solid #e84941;
+}
+
 .jigsaw0 {
   background-position: 0 0;
 }
@@ -778,6 +782,10 @@ html {
   .controls,
   .createdBy {
     width: 450px;
+  }
+  .controls ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .createdBy {
     margin-bottom: 15px;

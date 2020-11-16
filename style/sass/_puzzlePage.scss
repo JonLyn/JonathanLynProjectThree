@@ -186,13 +186,19 @@
         }
 }
 
-// Random image for puzzle pieces
+// Get random image for puzzle pieces
 .piece {
     position: absolute;
     background-image: url('http://lorempixel.com/400/400/cats');
     background-repeat: no-repeat;
     z-index: 50;   
 }
+
+// Add border to piece when using keyboard controls
+.keyBorder {
+    border: 2px solid $accent;
+}
+
 
 // Adjusting the positioning of the image for each puzzle piece
 .jigsaw0 {
@@ -367,6 +373,10 @@
     .controls,
     .createdBy {
         width: 450px;
+    }
+
+    .controls ul {
+        flex-wrap: wrap;
     }
 
     // Adjust bottom margin of personal page/Juno link
