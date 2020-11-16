@@ -609,7 +609,7 @@ body {
 
 .piece {
   position: absolute;
-  background-image: url("../assets/toughPuzzleOne.jpg");
+  background-image: url("../assets/toughPuzzleFour.jpg");
   background-repeat: no-repeat;
   z-index: 50;
 }
@@ -792,7 +792,7 @@ body {
     margin: 0 40px 0 0;
   }
   .movesLeft h2 {
-    width: 50%;
+    width: 40%;
   }
   .movesLeft p {
     line-height: 0;
@@ -826,9 +826,13 @@ body {
 }
 
 @media (max-width: 525px) {
+  .wrapper {
+    width: 340px;
+  }
   .gameTitle {
     font-size: 4.5rem;
-    width: 350px;
+    width: 340px;
+    margin: 0 auto 5px;
   }
   .createdBy {
     width: 80%;
@@ -843,9 +847,12 @@ body {
   .movesLeft,
   .gameReplay {
     margin: 10px auto;
-    width: 350px;
+    width: 340px;
   }
   .movesLeft {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
     margin-bottom: 30px;
   }
   .puzzleContainer {
@@ -857,7 +864,7 @@ body {
     width: 300px;
   }
   .piecesBoundary {
-    width: 350px;
+    width: 340px;
   }
   .pieceSlot,
   .handle {
@@ -933,13 +940,17 @@ body {
     /* border: 2px solid blue; */
   }
   .controls {
-    width: 350px;
+    max-width: 340px;
+    min-width: 340px;
   }
   .controls ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .alert {
+    width: 80%;
   }
 }
 

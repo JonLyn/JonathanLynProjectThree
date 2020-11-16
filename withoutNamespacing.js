@@ -64,7 +64,7 @@ $(function () {
     }
 
     // Create difficulty level
-    const moves = 50;
+    const moves = 10;
     // Create counter variable and function to keep track of the number to total moves remaining
     let movesRemainCount = moves;
 
