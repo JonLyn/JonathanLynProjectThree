@@ -469,7 +469,7 @@ html {
 }
 
 .controls ul li {
-  margin: 10px;
+  margin: 10px 20px 10px 0;
 }
 
 .controlsTitle {
@@ -519,10 +519,33 @@ html {
 }
 
 .correctNotification {
-  border: 1px solid #fff8f0;
   display: inline-block;
   width: 100px;
   height: 100px;
+  -webkit-animation: borderPulse .4s 1 ease;
+          animation: borderPulse .4s 1 ease;
+}
+
+@-webkit-keyframes borderPulse {
+  0%, 50%, 100% {
+    border: 1px solid "Montserrat", sans-serif;
+    opacity: 1;
+  }
+  25%, 75% {
+    border: 5px solid "Montserrat", sans-serif;
+    opacity: 0;
+  }
+}
+
+@keyframes borderPulse {
+  0%, 50%, 100% {
+    border: 1px solid "Montserrat", sans-serif;
+    opacity: 1;
+  }
+  25%, 75% {
+    border: 5px solid "Montserrat", sans-serif;
+    opacity: 0;
+  }
 }
 
 .piecesContainer,
