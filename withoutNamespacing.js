@@ -5,8 +5,8 @@
 // Point users to click link to go to game page
 $(function () {
     for (let i = 0; i < 16; i++) {
-        $('.piecesContainer').append(`<div class='piece jigsaw${i}'>
-    <a href='' class='handle'></a></div>`);
+        $('.piecesContainer').append(`<div class='correctNotification piece jigsaw${i}'>
+    <a href='' class='handle '></a></div>`);
     }
     // Create piece slots as <div>s in HTML
     for (let i = 0; i < 16; i++) {
@@ -142,7 +142,7 @@ $(function () {
             }
 
             
-            $(eachPiece).draggable('enable');
+            $(eachPiece).draggable('enable').removeClass('correctNotification');
         })
         $('button').mouseup(function () {
             this.blur()
@@ -158,7 +158,7 @@ $(function () {
         $(slotArray[correctPiece]).on('drop', function (event, ui) {
             console.log('correct');
             // Disable dragging the puzzle piece once it has been dropped on the correct slot and lower z-index in case another piece is placed on top
-            $(piecesArray[correctPiece]).draggable('disable').addClass('zIndexLower');
+            $(piecesArray[correctPiece]).draggable('disable').addClass('zIndexLower').addClass('correctNotification');
             // Increase correct move counter by 1
             correctCount++;
             console.log(correctCount);

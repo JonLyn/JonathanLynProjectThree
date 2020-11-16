@@ -512,6 +512,17 @@ body {
   }
 }
 
+.correctNotification {
+  border: 1px solid #fff8f0;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: correct .4s 1 ease;
+          animation: correct .4s 1 ease;
+}
+
 .controls {
   width: 845px;
   margin-top: 20px;
