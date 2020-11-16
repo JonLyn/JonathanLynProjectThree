@@ -193,7 +193,7 @@ $(function () {
                     case 38: position.top -= distance; break; // Up
                     case 39: position.left += distance; break; // Right
                     case 40: position.top += distance; break; // Down
-                    default: return true; // Exit and bubble
+                    default: return true; // Exit and loop
                 }
 
                 // Keep draggable within container
