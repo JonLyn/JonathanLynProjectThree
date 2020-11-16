@@ -99,8 +99,6 @@ body {
     display: inline-block;
     width: 100px;
     height: 100px;
-    transform-origin: center;
-    animation: correct .4s 1 ease ;
 }
 
 .controls {
@@ -534,6 +532,11 @@ body {
 
     .alert {
         width: 80%;
+    }
+
+    .correctNotification {
+        width: 75px;
+        height: 75px;
     }
 
 
