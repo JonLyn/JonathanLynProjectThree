@@ -200,53 +200,69 @@
 }
 
 // Adjusting the positioning of the image for each puzzle piece
+
 .jigsaw0 {
     background-position: 0 0;
 }
+
 .jigsaw1 {
-    background-position: 0 -100px;
+    background-position: -100px 0;
 }
+
 .jigsaw2 {
-    background-position: -200px -300px;
+    background-position: -200px 0;
 }
+
 .jigsaw3 {
-    background-position: -300px 0; 
+    background-position: -300px 0;
 }
+
 .jigsaw4 {
-    background-position: -100px -100px;
+    background-position: 0 -100px;
+
 }
+
 .jigsaw5 {
-    background-position: -200px 0; 
+    background-position: -100px -100px;
+
 }
+
 .jigsaw6 {
-    background-position: 0 -300px;
+    background-position: -200px -100px;
+
 }
+
 .jigsaw7 {
     background-position: -300px -100px;
+
 }
+
 .jigsaw8 {
-    background-position: -200px -200px
+    -position: 0 -200px
 }
+
 .jigsaw9 {
     background-position: -100px -200px
 }
+
 .jigsaw10 {
-    background-position: 0 -200px
+    background-position: -200px -200px
 }
+
 .jigsaw11 {
-    background-position: -200px -100px;
+    background-position: -300px -200px
 }
+
 .jigsaw12 {
-    background-position: -100px 0; 
+    background-position: 0 -300px;
 }
+
 .jigsaw13 {
     background-position: -100px -300px;
 }
+
 .jigsaw14 {
-    background-position: -300px -200px
-}
-.jigsaw15 {
-    background-position: -300px -300px;
+    background-position: -200px -300px;
 }
 
 // Lower z-index of correctly placed piece
@@ -455,54 +471,70 @@
     }
     
     // Adjust positioning of images for each piece
-    .jigsaw0 {
-        background-position: -175px -175px;
-    }
-    .jigsaw1 {
-        background-position: -75px 0;
-    }
-    .jigsaw2 {
-        background-position: 0 -275px;
-    }
-    .jigsaw3 {
-        background-position: -275px -275px;
-    }
-    .jigsaw4 {
-        background-position: -275px -75px;
-    }
-    .jigsaw5 {
-        background-position: 0 0;
-    }
-    .jigsaw6 {
-        background-position: -175px -75px;
-    }
-    .jigsaw7 {
-        background-position: -275px 0;
-    }
-    .jigsaw8 {
-        background-position: -175px -275px;
-    }
-    .jigsaw9 {
-        background-position: -75px -275px;
-    }
-    .jigsaw10 {
-        background-position: 0 -75px;
-    }
-    .jigsaw11 {
-        background-position: -275px -175px;
-    }
-    .jigsaw12 {
-        background-position: -175px 0;
-    }
-    .jigsaw13 {
-        background-position: -75px -175px;
-    }
-    .jigsaw14 {
-        background-position: 0 -175px;
-    }
-    .jigsaw15 {
-        background-position: -75px -75px;
-    }
+.jigsaw0 {
+    background-position: 0 0;
+}
+
+.jigsaw1 {
+    background-position: -75px 0;
+}
+
+.jigsaw2 {
+    background-position: -175px 0;
+}
+
+.jigsaw3 {
+    background-position: -275px 0;
+}
+
+.jigsaw4 {
+    background-position: 0 -75px;
+
+}
+
+.jigsaw5 {
+    background-position: -75px -75px;
+
+}
+
+.jigsaw6 {
+    background-position: -175px -75px;
+
+}
+
+.jigsaw7 {
+    background-position: -275px -75px;
+
+}
+
+.jigsaw8 {
+    -position: 0 -175px
+}
+
+.jigsaw9 {
+    background-position: -75px -175px
+}
+
+.jigsaw10 {
+    background-position: -175px -175px
+}
+
+.jigsaw11 {
+    background-position: -275px -175px
+}
+
+.jigsaw12 {
+    background-position: 0 -275px;
+}
+
+.jigsaw13 {
+    background-position: -75px -275px;
+}
+
+.jigsaw14 {
+    background-position: -175px -275px;
+}
+
 
     // Reduce control instructions area
     .controls {
