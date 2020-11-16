@@ -375,47 +375,55 @@
         width:340px;
     }
 
-    // Reduce  
+    // Reduce 'Impuzzible' title text 
     .gameTitle {
         font-size: 4.5rem;
         width: 340px;
         margin: 0 auto 5px;
     }
 
+    // Adjust personal page/Juno link width and add bottom margin
     .createdBy {
         width: 80%;
         margin-bottom: 15px;
     }
 
+    // Change the order and apply column layout to the counter and restart button
     .counterAndRestart {
         flex-direction: column-reverse;
     }
 
+    // Adjust width and margin of counter and restart button
     .movesLeft,
     .gameReplay {
         margin: 10px auto;
         width: 340px;
     }
 
+    // Adjust spacing of counter and add bottom margin
     .movesLeft {
         justify-content: space-evenly;
         margin-bottom: 30px;
     }
 
+    // Reduce playing area width
     .puzzleContainer {
     width: 300px;
     min-width: 300px;
     height: 300px;
     }
 
+    // Reduce pieces starting area width
     .piecesContainer {
         width: 300px;
     }
 
+    // Reduce piece constraint area
     .piecesBoundary {
         width: 340px;
     }
 
+    // Reduce size of puzzle pieces and slots
     .pieceSlot,
     .handle {
         flex-basis: 75px;
@@ -425,93 +433,80 @@
         min-height: 75px;
     }
 
+    // Adjust positioning of images for each piece
     .jigsaw0 {
     background-position: 0 0;
-    /* border: 1px solid yellow; */
     }
     .jigsaw1 {
         background-position: -75px 0;
-        /* border: 1px solid yellow; */
     }
     .jigsaw2 {
         background-position: -175px 0;
-        /* border: 1px solid yellow; */
     }
     .jigsaw3 {
         background-position: -275px 0;
-        /* border: 1px solid yellow; */
     }
     .jigsaw4 {
         background-position: 0 -75px;
-        /* border: 2px solid green; */
     }
     .jigsaw5 {
         background-position: -75px -75px;
-        /* border: 2px solid green; */
     }
     .jigsaw6 {
         background-position: -175px -75px;
-        /* border: 2px solid green; */
     }
     .jigsaw7 {
         background-position: -275px -75px;
-        /* border: 2px solid green; */
     }
     .jigsaw8 {
         background-position: 0 -175px;
-        /* border: 2px solid red; */
     }
     .jigsaw9 {
         background-position: -75px -175px;
-        /* border: 2px solid red; */
     }
     .jigsaw10 {
         background-position: -175px -175px;
-        /* border: 2px solid red; */
     }
     .jigsaw11 {
         background-position: -275px -175px;
-        /* border: 2px solid red; */
     }
     .jigsaw12 {
         background-position: 0 -275px;
-        /* border: 2px solid blue; */
     }
     .jigsaw13 {
         background-position: -75px -275px;
-        /* border: 2px solid blue; */
     }
     .jigsaw14 {
         background-position: -175px -275px;
-        /* border: 2px solid blue; */
     }
     .jigsaw15 {
         background-position: -275px -275px;
-        /* border: 2px solid blue; */
     }
 
+    // Reduce control instructions area
     .controls {
         max-width: 340px;
         min-width: 340px;
-    }
-    .controls ul {
-        flex-direction: column;
+            & ul {
+                flex-direction: column;
+            }
     }
 
+    // Adjust pop-up win/lose message width
     .alert {
         width: 80%;
     }
 
+    // Reduce the size of the border notification on piece when placed correctly
     .correctNotification {
         width: 75px;
         height: 75px;
     }
-
-
 }
 
-
+// Third media query 
 @media (max-width: 420px) {
+    // Reduce the 'Impuzzible' title text
     .gameTitle {
         font-size: 4rem;
     }
