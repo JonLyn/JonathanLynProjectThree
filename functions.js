@@ -60,7 +60,7 @@ $(function () {
     }
 
     // Variable to store the number of moves allowed
-    const moves = 50;
+    const moves = 30;
     
     // Create counter variable and function to keep track of the number to total moves remaining
     let movesRemainCount = moves;

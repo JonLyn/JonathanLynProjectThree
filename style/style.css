@@ -596,7 +596,7 @@ html {
 
 .piece {
   position: absolute;
-  background-image: url("http://lorempixel.com/400/400/cats");
+  background-image: url("https://placekitten.com/400/400");
   background-repeat: no-repeat;
   z-index: 50;
 }
